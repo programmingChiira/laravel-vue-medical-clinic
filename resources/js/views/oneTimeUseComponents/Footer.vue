@@ -49,9 +49,7 @@
               <router-link class="active" to="/">
                 Home
               </router-link>
-              <router-link class="" to="/about">
-                About
-              </router-link>
+              <br/>
               <router-link class="" to="/departments">
                 Departments
               </router-link>
