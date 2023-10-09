@@ -1,0 +1,23 @@
+{
+    "dashboard": "Dashboard",
+    "sales": "Sales",
+    "analytics": "Analytics",
+    "apps": "Apps",
+    "components": "Components",
+    "elements": "Elements",
+    "font_icons": "Font Icons",
+    "widgets": "Widgets",
+    "tables": "Tables",
+    "datatables": "Data Tables",
+    "forms": "Forms",
+    "users": "Users",
+    "pages": "Pages",
+    "authentication": "Authentication",
+    "drag_and_drop": "Drag and Drop",
+    "maps": "Maps",
+    "charts": "Charts",
+    "starter_kit": "Starter Kit",
+    "documentation": "Documentation",
+    "ui_kit": "UI Kit",
+    "more": "More"
+}

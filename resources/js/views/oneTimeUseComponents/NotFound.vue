@@ -1,0 +1,103 @@
+<template>
+    <div class="layout-px-spacing">
+        <div class="error404 text-center">
+            <div class="container-fluid error-content">
+                <div>
+                    <h1 class="error-number">404</h1>
+                    <br/>
+                    <br/>
+                    <p class="error-text mb-4 mt-1">The page you requested was not found!</p>
+                    <router-link to="/">
+                        <button class="btn btn-sm btn-success">Go to Home</button>
+                    </router-link>
+                </div>
+            </div>
+        </div>
+        <Footer></Footer>
+    </div>
+</template>
+
+<script>
+import Footer from '@/views/oneTimeUseComponents/Footer.vue';
+import Nav from '@/views/oneTimeUseComponents/Nav.vue';
+
+export default {
+    components: {
+        Footer,
+        Nav,
+    },
+    mounted() {
+        document.title = '404 ERROR :- Intelligent system';
+    },
+    // Component options
+};
+</script>  
+  
+<style scoped lang="scss">
+.error404 {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23e6e6e6'/%3E%3Cstop offset='1' stop-color='%23eaf1ff'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%234361ee' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%234361ee' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.5'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #ffffff;
+
+    .theme-logo {
+        width: 62px;
+        height: 62px;
+    }
+
+    >.error-content {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .mini-text {
+        font-size: 33px;
+        font-weight: 700;
+        margin-bottom: 0;
+        color: greenyellow;
+        /* Use your SCSS variable or replace with a color value */
+    }
+
+    .img-cartoon {
+        width: 170px;
+        height: 170px;
+    }
+
+    .error-number {
+        font-size: 170px;
+        color: black;
+        font-weight: 600;
+        margin-bottom: 5px;
+        margin-top: 15px;
+        text-shadow: 0px 5px 4px rgba(31, 45, 61, 0.1019607843);
+    }
+
+    .error-text {
+        font-size: 18px;
+        color: black;
+        /* Use your SCSS variable or replace with a color value */
+        font-weight: 600;
+    }
+
+    a.btn {
+        width: 134px;
+        padding: 6px;
+        font-size: 17px;
+        background-image: linear-gradient(135deg, #FF0000 0%, #00FF00 100%);
+        /* Replace with your desired colors */
+        border: none;
+        letter-spacing: 2px;
+
+        &:hover,
+        &:not(:disabled):not(.disabled):active {
+            background-image: linear-gradient(to right, #FF0000 0%, #00FF00 100%);
+            /* Replace with your desired hover colors */
+        }
+    }
+
+}
+</style>

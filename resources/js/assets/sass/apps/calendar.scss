@@ -1,0 +1,287 @@
+/*=================
+    Imports
+=================*/
+
+/*Base Variables*/
+@import '../../base/base';
+
+.calendar-upper-section {
+    padding: 0;
+    margin-bottom: 40px;
+    margin-top: 5px;
+}
+
+.labels .label {
+    display: inline-block;
+    margin-bottom: 0;
+    position: relative;
+    padding: 0 17px;
+    font-size: 14px;
+    color: #3b3f5c;
+    cursor: pointer;
+}
+
+.labels .label:before {
+    content: '';
+    position: absolute;
+    padding: 0;
+    background: #000;
+    border-radius: 2px;
+    left: 0px;
+    top: 5px;
+    height: 10px;
+    width: 10px;
+}
+
+.labels .label.label-primary:before {
+    background: #4361ee;
+}
+
+.labels .label.label-warning:before {
+    background: #e2a03f;
+}
+
+.labels .label.label-success:before {
+    background: #1abc9c;
+}
+
+.labels .label.label-danger:before {
+    background: #e7515a;
+}
+
+.fc .fc-button-group > :first-child {
+    margin-left: 0;
+}
+
+.fc .fc-button-group > * {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #000 !important;
+}
+
+button.fc-today-button {
+    border: 1px solid #e0e6ed !important;
+    background: none !important;
+    color: #000 !important;
+}
+
+.fc .fc-toolbar-title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.fc-event-title {
+    white-space: normal;
+    text-overflow: ellipsis;
+}
+
+.fc .fc-button-group .fc-button-active,
+.fc .fc-button-group .fc-button:hover {
+    background: #009688 !important;
+    color: #fff !important;
+    border-radius: 3.5px !important;
+}
+.apps-calendar .panel-body .fc-button-group .fc-button-primary:not(:first-child) {
+    margin: 0 0 0 4px;
+}
+
+.fc .fc-daygrid-day-top {
+    flex-direction: row !important;
+}
+
+.fc .fc-daygrid-day-number {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    margin: 6px !important;
+}
+
+td.fc-day-today .fc-daygrid-day-number {
+    background: #4361ee;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.fc-event {
+    margin: 0px 18px;
+    padding: 5px 15px !important;
+    border: 1px solid #888ea8 !important;
+    color: #3b3f5c !important;
+    background-color: #fff !important;
+    box-shadow: 0px 0px 6px 0px rgb(31 45 61 / 10%);
+}
+.fc-event-time {
+    font-weight: bold !important;
+}
+.fc-event-title {
+    font-weight: normal !important;
+}
+
+.fc-event .fc-event-main {
+    color: #3b3f5c !important;
+}
+.fc-daygrid-event,
+.fc-timegrid-event {
+    color: #fff;
+    box-shadow: none !important;
+    border-color: #ebedf2 !important;
+}
+.fc-daygrid-event.bg-primary,
+.fc-timegrid-event.bg-primary {
+    background-color: #eaf1ff !important;
+}
+
+.fc-daygrid-event.bg-success,
+.fc-timegrid-event.bg-success {
+    background-color: #ddf5f0 !important;
+}
+
+.fc-daygrid-event.bg-warning,
+.fc-timegrid-event.bg-warning {
+    background-color: #fff9ed !important;
+}
+
+.fc-daygrid-event.bg-danger,
+.fc-timegrid-event.bg-danger {
+    background-color: #fff5f5 !important;
+}
+
+a.fc-daygrid-event.bg-primary:hover,
+a.fc-daygrid-event.bg-success:hover,
+a.fc-daygrid-event.bg-warning:hover,
+a.fc-daygrid-event.bg-danger:hover,
+a.fc-timegrid-event.bg-primary:hover,
+a.fc-timegrid-event.bg-success:hover,
+a.fc-timegrid-event.bg-warning:hover,
+a.fc-timegrid-event.bg-danger:hover {
+    background-color: inherit !important;
+}
+.fc-daygrid-event .fc-event-main-frame,
+.fc-timegrid-event .fc-event-main-frame {
+    display: flex;
+}
+.fc-daygrid-event .fc-event-main-frame:before,
+.fc-timegrid-event .fc-event-main-frame:before {
+    content: '';
+    height: 5px;
+    background: #000;
+    width: 5px;
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    border-radius: 50%;
+}
+.fc-daygrid-dot-event .fc-event-main-frame:before,
+.fc-timegrid-dot-event .fc-event-main-frame:before {
+    left: 6px;
+    top: 9px;
+}
+
+.fc-daygrid-event.bg-primary .fc-event-main-frame:before,
+.fc-timegrid-event.bg-primary .fc-event-main-frame:before {
+    background: #4361ee;
+}
+
+.fc-daygrid-event.bg-success .fc-event-main-frame:before,
+.fc-timegrid-event.bg-success .fc-event-main-frame:before {
+    background: #1abc9c;
+}
+
+.fc-daygrid-event.bg-warning .fc-event-main-frame:before,
+.fc-timegrid-event.bg-warning .fc-event-main-frame:before {
+    background: #e2a03f;
+}
+
+.fc-daygrid-event.bg-danger .fc-event-main-frame:before,
+.fc-timegrid-event.bg-danger .fc-event-main-frame:before {
+    background: #e7515a;
+}
+
+.fc-direction-ltr .fc-daygrid-event.fc-event-end,
+.fc-direction-rtl .fc-daygrid-event.fc-event-start,
+.fc-direction-ltr .fc-daygrid-event.fc-event-start,
+.fc-direction-rtl .fc-daygrid-event.fc-event-end,
+.fc-direction-ltr .fc-timegrid-event.fc-event-end,
+.fc-direction-rtl .fc-timegrid-event.fc-event-start,
+.fc-direction-ltr .fc-timegrid-event.fc-event-start,
+.fc-direction-rtl .fc-timegrid-event.fc-event-end {
+    margin: 0 2px;
+}
+.flatpickr-calendar.open {
+    display: inline-block;
+    z-index: 99999 !important;
+}
+input[readonly] {
+    color: #3b3f5c;
+}
+
+/*custom tooltip*/
+.calendar-tlp {
+    width: 100%;
+    max-width: 300px;
+    position: absolute;
+    top: 30px;
+    border-radius: 6px;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #eeeeee;
+    display: none;
+}
+.fc-h-event.fc-event:hover,
+.fc-event.fc-daygrid-event:hover,
+.fc-event.fc-timegrid-event:hover {
+    z-index: 10;
+}
+
+.bg-primary .calendar-tlp {
+    color: $primary;
+    background-color: $l-primary;
+}
+
+.bg-success .calendar-tlp {
+    color: $success;
+    background-color: $l-success;
+}
+
+.bg-info .calendar-tlp {
+    color: $info;
+    background-color: $l-info;
+}
+
+.bg-danger .calendar-tlp {
+    color: $danger;
+    background-color: $l-danger;
+}
+
+.bg-warning .calendar-tlp {
+    color: $warning;
+    background-color: $l-warning;
+}
+
+.bg-dark .calendar-tlp {
+    color: $dark;
+    background-color: $l-dark;
+}
+
+@media (max-width: 767px) {
+    .fc .fc-toolbar.fc-header-toolbar {
+        flex-direction: column;
+    }
+    .fc-toolbar-chunk:not(:first-child) {
+        margin-top: 15px;
+    }
+    .calendar-upper-section {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .fc-event-title {
+        white-space: nowrap;
+    }
+}

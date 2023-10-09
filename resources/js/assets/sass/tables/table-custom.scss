@@ -1,0 +1,114 @@
+@import '../../base/base'; // Base Variables
+
+.table-header,
+.table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.table-header .header-search {
+    position: relative;
+}
+
+.table-header .header-search .form-control {
+    padding-right: 44px;
+}
+
+.table-header .header-search .search-image {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d3d3d3;
+}
+
+.custom-table {
+    .table th {
+        background: #eff5ff;
+        color: #515365;
+        text-transform: none;
+        font-size: 14px;
+        user-select: none;
+        border-top: 0;
+        font-weight: 600;
+    }
+
+    .table td,
+    .table th {
+        padding: 10px 21px;
+    }
+
+    .table-hover:not(.table-dark) tbody tr:hover {
+        background: #fafafa !important;
+    }
+
+    .table-striped:not(.table-dark) tbody tr:nth-of-type(odd) {
+        background-color: #fafafa !important;
+    }
+
+    .table.b-table > tbody > .table-active,
+    .table.b-table > tbody > .table-active > th,
+    .table.b-table > tbody > .table-active > td {
+        background-color: rgba(0, 0, 0, 0.045);
+    }
+
+    .table .actions .cancel:hover {
+        color: #e7515a;
+    }
+
+    .table td .profile-img {
+        height: 35px;
+    }
+
+    .table th.header-checkbox {
+        width: 1%;
+    }
+
+    .b-table-top-row .form-control {
+        height: calc(1.2em + 1.2rem + 2px);
+    }
+
+    .column-visibility .form-group label,
+    label {
+        font-size: 14px;
+    }
+
+    .table-footer {
+        .dataTables_info {
+            padding-top: 0.85em;
+            white-space: normal;
+            color: #4361ee;
+            font-weight: 600;
+            border: 1px solid #e0e6ed;
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+    }
+}
+
+.w-90 {
+    width: 90px;
+}
+
+@media (max-width: 576px) {
+    .table-header,
+    .table-footer {
+        flex-direction: column;
+    }
+
+    .table-header .header-search {
+        width: 100%;
+    }
+
+    .table-header > div:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .table-footer > div:not(:first-child) {
+        margin-top: 15px;
+    }
+}

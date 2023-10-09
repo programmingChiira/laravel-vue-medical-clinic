@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["resources/js/src/*"],
+            "@themeConfig": ["resources/js/theme.config.js"],
+        }
+    },
+}

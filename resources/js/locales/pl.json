@@ -1,0 +1,23 @@
+{
+    "dashboard": "Deska rozdzielcza",
+    "sales": "Sprzedaż",
+    "analytics": "Analityka",
+    "apps": "Aplikacje",
+    "components": "składniki",
+    "elements": "Elementy",
+    "font_icons": "Ikony czcionek",
+    "widgets": "Widżety",
+    "tables": "Stoły",
+    "datatables": "Tabele danych",
+    "forms": "Formularze",
+    "users": "Użytkownicy",
+    "pages": "Strony",
+    "authentication": "Uwierzytelnianie",
+    "drag_and_drop": "Przeciągnij i upuść",
+    "maps": "Mapy",
+    "charts": "Wykresy",
+    "starter_kit": "Zestaw startowy",
+    "documentation": "Dokumentacja",
+    "ui_kit": "Zestaw interfejsu użytkownika",
+    "more": "Więcej"
+}

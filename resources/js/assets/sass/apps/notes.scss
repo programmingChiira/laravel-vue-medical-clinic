@@ -1,0 +1,653 @@
+//  =================
+//      Imports
+//  =================
+
+@import '../../base/base'; // Base Variables
+
+.main-container,
+#content {
+    min-height: auto;
+}
+
+/*
+    App Note Container
+*/
+
+.app-note-container {
+    position: relative;
+    display: flex;
+
+    .tab-title {
+        max-width: 210px;
+        width: 100%;
+    }
+}
+
+.note-sidebar-scroll {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    overflow: auto;
+    height: calc(100vh - 202px);
+}
+
+/*
+    Group section 
+*/
+
+.group-section {
+    font-weight: 600;
+    font-size: 15px;
+    color: #3b3f5c;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    margin-bottom: 13px;
+    padding: 9px 20px;
+
+    svg {
+        color: #888ea8;
+        margin-right: 6px;
+        vertical-align: text-top;
+        width: 20px;
+        height: 20px;
+        fill: rgba(0, 23, 55, 0.08);
+    }
+}
+
+.app-note-overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #3b3f5c !important;
+    z-index: 4 !important;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+    &.app-note-overlay-show {
+        display: block;
+        opacity: 0.7;
+    }
+}
+
+/*
+    Tab Title
+*/
+
+.tab-title {
+    &.mail-menu-show {
+        left: 0;
+        width: 100%;
+        min-width: 190px;
+        height: 100%;
+    }
+
+    hr {
+        border-top: 1px solid #0e1726;
+        max-width: 54px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .nav-pills {
+        .nav-link.active,
+        .show > .nav-link {
+            background-color: rgb(198, 211, 253);
+            color: #3b3f5c;
+            font-weight: 600;
+        }
+
+        a.nav-link {
+            position: relative;
+            font-weight: 600;
+            color: #515365;
+            padding: 9px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 6px;
+
+            svg {
+                margin-right: 7px;
+                width: 18px;
+                height: 18px;
+                vertical-align: sub;
+            }
+
+            .mail-badge {
+                background: #eaf1ff;
+                border-radius: 50%;
+                position: absolute;
+                right: 8px;
+                padding: 4px 7px;
+                height: 24px;
+                width: 23px;
+                color: #4361ee;
+                font-weight: 600;
+            }
+        }
+
+        &.group-list .nav-item a {
+            position: relative;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 9px 15px 9px 50px;
+            color: #3b3f5c;
+            letter-spacing: 1px;
+
+            &[class*='g-dot-']:before {
+                position: absolute;
+                padding: 4px;
+                content: '';
+                border-radius: 50%;
+                top: 14px;
+                left: 20px;
+                border: 2px solid #515365;
+            }
+
+            &.g-dot-danger:before {
+                background: #fff5f5;
+                border: 1px solid #e7515a;
+            }
+
+            &.g-dot-primary:before {
+                background: #e7f7ff;
+                border: 1px solid #2196f3;
+            }
+
+            &.g-dot-warning:before {
+                background: #fff9ed;
+                border: 1px solid #e2a03f;
+            }
+
+            &.g-dot-success:before {
+                background: #f3effc;
+                border: 1px solid #805dca;
+            }
+        }
+
+        .nav-item .dropdown-menu {
+            box-shadow: 0px 0px 15px 1px rgba(113, 106, 202, 0.2);
+            padding: 0;
+            border: none;
+        }
+    }
+
+    li.mail-labels {
+        a.dropdown-item {
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 18px;
+
+            &:hover {
+                background-color: #fff;
+                color: #4361ee;
+            }
+        }
+
+        .label:after {
+            position: absolute;
+            content: '';
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            right: 15px;
+            top: 43%;
+        }
+    }
+}
+
+/*Mail Labels*/
+
+/*
+    Note container
+*/
+
+.note-container {
+    padding: 0 0 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .switch {
+        text-align: right;
+        margin-bottom: 43px;
+
+        .active-view {
+            color: #4361ee;
+            fill: rgba(27, 85, 226, 0.2392156863);
+        }
+
+        .view-list,
+        .view-grid {
+            padding: 10px;
+            background: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #515365;
+            box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12);
+            width: 43px;
+            height: 41px;
+            fill: rgba(0, 23, 55, 0.08);
+        }
+    }
+}
+
+/* 
+    Note Container
+*/
+
+.note-content {
+    min-height: 135px;
+    margin-bottom: 15px;
+}
+
+.note-container.note-grid .note-item {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    &.note-personal .note-inner-content {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 3px solid #4461ed;
+        background: #eaf1ff;
+    }
+
+    &.note-work .note-inner-content {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 3px solid #e2a03f;
+        background: #fff9ed;
+    }
+
+    &.note-important .note-inner-content {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 3px solid #e7515a;
+        background: #fff5f5;
+    }
+
+    &.note-social .note-inner-content {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 3px solid #805dca;
+        background: #f3effc;
+    }
+
+    .note-inner-content {
+        border-radius: 4px;
+        width: 100%;
+        position: relative;
+        padding: 16px 16px 6px 16px;
+        margin-right: 0;
+        margin-bottom: 18px;
+        border-radius: 6px;
+        background: #ffffff;
+        border: 1px solid #ebedf2;
+        box-shadow: 18px 20px 10.3px -23px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 3px solid #888ea8;
+
+        .note-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #3b3f5c;
+            margin-bottom: 0px;
+            letter-spacing: 0px;
+        }
+
+        .meta-time {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: rgb(119, 135, 204);
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        .note-description {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 0;
+            letter-spacing: 0px;
+            word-wrap: break-word;
+            color: #515365;
+        }
+
+        .note-action {
+            display: inline-block;
+
+            .fav-note,
+            .delete-note {
+                padding: 4px;
+                border-radius: 5px;
+                cursor: pointer;
+                color: #607d8b;
+                width: 28px;
+                height: 28px;
+                fill: #f1f2f3;
+                stroke-width: 1.6;
+            }
+        }
+    }
+
+    &.note-fav .note-inner-content .note-action .fav-note {
+        fill: #ffbb44;
+    }
+
+    .note-inner-content {
+        .note-action {
+            .fav-note:hover {
+                fill: #e2a03f;
+            }
+
+            .delete-note:hover {
+                color: #e7515a;
+            }
+        }
+
+        .note-footer {
+            display: inline-block;
+            float: right;
+
+            .tags {
+                display: inline-block;
+                position: relative;
+                padding: 4px 6px;
+                border-radius: 4px;
+
+                [class*='g-dot-'] {
+                    content: '';
+                    background: transparent;
+                    border-radius: 50%;
+                    border: 2px solid #e3e4eb;
+                    display: inline-block;
+                    height: 11px;
+                    width: 11px;
+                    vertical-align: middle;
+                    display: none;
+                }
+
+                .g-dot-personal {
+                    background: #e7f7ff;
+                    border: 2px solid #2196f3;
+                }
+
+                .g-dot-work {
+                    background: #fff9ed;
+                    border: 2px solid #e2a03f;
+                }
+
+                .g-dot-social {
+                    background: #f3effc;
+                    border: 2px solid #805dca;
+                }
+
+                .g-dot-important {
+                    background: #fff5f5;
+                    border: 2px solid #e7515a;
+                }
+            }
+        }
+    }
+
+    &.note-personal .note-inner-content .note-footer .tags .g-dot-personal,
+    &.note-work .note-inner-content .note-footer .tags .g-dot-work,
+    &.note-social .note-inner-content .note-footer .tags .g-dot-social,
+    &.note-important .note-inner-content .note-footer .tags .g-dot-important {
+        display: inline-block;
+    }
+
+    .note-inner-content .note-footer {
+        .tags-selector {
+            display: inline-block;
+
+            .dropdown-menu {
+                min-width: 8rem;
+
+                a {
+                    font-size: 14px;
+                    padding: 3px 35px;
+                    font-weight: 600;
+                    letter-spacing: 0px;
+                    color: #3b3f5c;
+                }
+
+                .dropdown-item {
+                    &.active,
+                    &:active {
+                        background: transparent;
+                    }
+                }
+
+                [class*='g-dot-']:before {
+                    content: '';
+                    position: absolute;
+                    padding: 4px;
+                    border-radius: 50%;
+                    top: 9px;
+                    left: 10px;
+                    border: 2px solid #515365;
+                }
+
+                a {
+                    &.g-dot-important:before {
+                        background: #fff5f5;
+                        border: 1px solid #e7515a;
+                    }
+
+                    &.g-dot-personal:before {
+                        background: #e7f7ff;
+                        border: 1px solid #2196f3;
+                    }
+
+                    &.g-dot-work:before {
+                        background: #fff9ed;
+                        border: 1px solid #e2a03f;
+                    }
+
+                    &.g-dot-social:before {
+                        background: #f3effc;
+                        border: 1px solid #805dca;
+                    }
+                }
+            }
+        }
+
+        .nav-link {
+            padding: 0;
+
+            span {
+                display: block;
+            }
+
+            .feather-more-vertical {
+                border-radius: 5px;
+                cursor: pointer;
+                color: #515365;
+                width: 20px;
+                height: 20px;
+
+                &:hover {
+                    color: #0e1726;
+                }
+            }
+        }
+    }
+
+    &.note-personal .note-inner-content .note-footer .nav-link .feather-more-vertical,
+    &.note-work .note-inner-content .note-footer .nav-link .feather-more-vertical,
+    &.note-social .note-inner-content .note-footer .nav-link .feather-more-vertical,
+    &.note-important .note-inner-content .note-footer .nav-link .feather-more-vertical {
+        display: none;
+    }
+}
+
+/*
+=====================
+    Modal Content
+=====================
+*/
+
+.modal-content {
+    border: none;
+    box-shadow: 0px 0px 15px 1px rgba(113, 106, 202, 0.2);
+
+    .modal-footer {
+        border-top: none;
+
+        [data-dismiss='modal'] {
+            background-color: #fff;
+            color: #4361ee;
+            font-weight: 700;
+            border: 1px solid #e8e8e8;
+            padding: 10px 25px;
+        }
+
+        .btn[data-dismiss='modal'] svg {
+            margin-right: 5px;
+            width: 18px;
+            vertical-align: bottom;
+        }
+
+        #btn-n-add {
+            background-color: #4361ee;
+            color: #fff;
+            font-weight: 600;
+            border: 1px solid #4361ee;
+            padding: 10px 25px;
+        }
+
+        #btn-n-save {
+            font-weight: 600;
+            padding: 10px 25px;
+        }
+    }
+}
+
+.modal-content svg.close {
+    position: absolute;
+    right: -7px;
+    top: -8px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px;
+    background: #fff;
+    border-radius: 5px;
+    opacity: 1;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.6s;
+    color: #3b3f5c;
+}
+
+.notes-box .notes-content form {
+    .note-title {
+        padding-top: 20px;
+    }
+
+    .note-description {
+        padding-top: 40px;
+    }
+}
+
+/*
+    ===============
+        Note Box
+    ===============
+*/
+
+.hamburger {
+    display: none;
+}
+
+/*
+    Media Query
+*/
+
+@media (min-width: 1200px) {
+    .note-container.note-grid .note-item {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .note-container.note-grid .note-item {
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .note-container {
+        &.note-grid .note-item {
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        padding: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .app-notes {
+        margin-top: 37px;
+    }
+
+    .app-note-container .tab-title {
+        position: absolute;
+        z-index: 4;
+        left: -170px;
+        width: 0;
+    }
+
+    .tab-title.note-menu-show {
+        left: 0;
+        width: 100%;
+        min-width: 190px;
+        min-height: 485px;
+        border-radius: 0;
+        padding: 11px;
+        background: #fff;
+        height: 100%;
+    }
+
+    .note-sidebar-scroll {
+        height: 100%;
+    }
+
+    .app-hamburger-container {
+        text-align: right;
+    }
+
+    .hamburger {
+        position: relative;
+        top: -13px;
+        padding: 6px 9px 6px 9px;
+        font-size: 20px;
+        color: #fff;
+        align-self: center;
+        display: inline-block;
+        background-color: #515365;
+        border-radius: 50%;
+    }
+}
+
+@media (max-width: 575px) {
+    .note-container {
+        &.note-grid .note-item {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}

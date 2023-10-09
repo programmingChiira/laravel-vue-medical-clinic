@@ -1,0 +1,23 @@
+{
+    "dashboard": "Armaturenbrett",
+    "sales": "Der Umsatz",
+    "analytics": "Analytik",
+    "apps": "Apps",
+    "components": "Komponenten",
+    "elements": "Elemente",
+    "font_icons": "Schriftsymbole",
+    "widgets": "Widgets",
+    "tables": "Tabellen",
+    "datatables": "Datentabellen",
+    "forms": "Formen",
+    "users": "Benutzer",
+    "pages": "Seiten",
+    "authentication": "Authentifizierung",
+    "drag_and_drop": "Ziehen und ablegen",
+    "maps": "Karten",
+    "charts": "Diagramme",
+    "starter_kit": "Starter-Kit",
+    "documentation": "Dokumentation",
+    "ui_kit": "UI-Kit",
+    "more": "Mehr"
+}
