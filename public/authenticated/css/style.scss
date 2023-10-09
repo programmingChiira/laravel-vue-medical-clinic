@@ -1,0 +1,766 @@
+$white: #ffffff;
+$black: #000000;
+$primary1: #62d2a2;
+$primary2: #1fab89;
+$textCol: #1f1f1f;
+
+// import fonts - font-family: 'Nunito', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+@mixin main-font {
+  font-family: 'Nunito', sans-serif;
+}
+
+@mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
+  display: inline-block;
+  padding: $pad1 $pad2;
+  background-color: $col1;
+  color: $col2;
+  border-radius: $bRadius;
+  transition: all 0.3s;
+  border: 1px solid $col1;
+
+  &:hover {
+    background-color: transparent;
+    color: $col1;
+
+  }
+}
+
+@mixin upperBold {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+body {
+  @include main-font;
+  color: #000000;
+  background-color: #fefefe;
+  overflow-x: hidden;
+}
+
+.layout_padding {
+  padding: 90px 0;
+}
+
+.layout_padding2 {
+  padding: 75px 0;
+}
+
+.layout_padding2-top {
+  padding-top: 75px;
+}
+
+.layout_padding2-bottom {
+  padding-bottom: 75px;
+}
+
+.layout_padding-top {
+  padding-top: 90px;
+}
+
+.layout_padding-bottom {
+  padding-bottom: 90px;
+}
+
+.layout_margin-top {
+  margin-top: 90px;
+}
+
+.layout_margin-bottom {
+  margin-bottom: 90px;
+}
+
+.heading_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h2 {
+    position: relative;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  &.heading_center {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: initial;
+}
+
+.btn,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+/*header section*/
+.hero_area {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .hero_bg_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: bottom right;
+    }
+  }
+}
+
+.sub_page {
+  .hero_area {
+    min-height: auto;
+    background-color: darken($color: $primary2, $amount: 10);
+
+    .hero_bg_box {
+      display: none;
+    }
+  }
+}
+
+.header_section {
+  padding: 15px 0;
+
+  .container-fluid {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+.navbar-brand {
+  span {
+    font-weight: bold;
+    font-size: 24px;
+    color: $white;
+    text-transform: uppercase;
+  }
+}
+
+.custom_nav-container {
+  padding: 0;
+
+  .navbar-nav {
+    margin-left: auto;
+
+    .nav-item {
+      .nav-link {
+        padding: 5px 20px;
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+    }
+  }
+}
+
+.custom_nav-container .nav_search-btn {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+  color: $white;
+
+  &:hover {
+    color: $primary1;
+  }
+}
+
+.custom_nav-container .navbar-toggler {
+  outline: none;
+}
+
+.custom_nav-container .navbar-toggler {
+  padding: 0;
+  width: 37px;
+  height: 42px;
+  transition: all 0.3s;
+
+  span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: $white;
+    margin: 7px 0;
+    transition: all 0.3s;
+    position: relative;
+    border-radius: 5px;
+    transition: all 0.3s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $white;
+      top: -10px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    &::after {
+      top: 10px;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    transform: rotate(360deg);
+
+    span {
+      transform: rotate(45deg);
+
+      &::before,
+      &::after {
+        transform: rotate(90deg);
+        top: 0;
+      }
+    }
+  }
+}
+
+/*end header section*/
+
+/* slider section */
+.slider_section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 45px 0 145px 0;
+
+  .row {
+    align-items: center;
+  }
+
+  #customCarousel1 {
+    width: 100%;
+    position: unset;
+  }
+
+  .detail-box {
+    color: $primary2;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      color: $white;
+    }
+
+    p {
+      color: #fefefe;
+      font-size: 14px;
+    }
+
+    .btn-box {
+      display: flex;
+      margin: 0 -5px;
+      margin-top: 25px;
+
+      a {
+        margin: 5px;
+        text-align: center;
+        width: 165px;
+      }
+
+      .btn1 {
+        @include hero_btn($white, $primary1, 10px, 15px, 5px);
+      }
+    }
+  }
+
+  .img-box {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 375px;
+    }
+  }
+
+  .carousel-indicators {
+    position: unset;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      background-color: $white;
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      opacity: 1;
+
+      &.active {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+// end slider section
+
+// department section
+
+.department_section {
+  position: relative;
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 45px;
+    background-color: $white;
+    border-radius: 5px;
+    text-align: center;
+
+    .img-box {
+      width: 90px;
+      height: 90px;
+      margin-bottom: 15px;
+      background-color: $primary1;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 55px;
+        max-height: 55px;
+        transition: all 0.3s;
+      }
+    }
+
+    .detail-box {
+      h5 {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      p {}
+
+      a {
+        color: $primary2;
+        font-weight: 600;
+
+        &:hover {
+          color: $primary1;
+        }
+      }
+    }
+  }
+
+  .btn-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+
+    a {
+      @include hero_btn($primary1, $white, 10px, 45px, 5px);
+    }
+  }
+}
+
+// end department section
+
+// about section
+.about_section {
+  .row {
+    align-items: center;
+  }
+
+  .img-box {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+    }
+  }
+
+  .detail-box {
+    h3 {
+      font-weight: bold;
+    }
+
+    p {
+      margin-top: 15px;
+    }
+
+    a {
+      @include hero_btn($primary1, $white, 10px, 45px, 5px);
+      margin-top: 15px;
+    }
+  }
+}
+
+// end about section
+
+// doctor section
+
+.doctor_section {
+  background: darken($color: $primary2, $amount: 10);
+
+  .heading_container {
+    color: $white;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 45px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: $white;
+
+    .img-box {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .detail-box {
+      width: 100%;
+      padding: 25px 15px;
+      text-align: center;
+      position: relative;
+
+      .social_box {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: 150%;
+        transform: translate(-50%, -50%);
+        background-color: $white;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        opacity: 0;
+        transition: all .3s;
+
+        a {
+          color: $primary1;
+          margin: 0 10px;
+
+          &:hover {
+            color: $primary2;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .social_box {
+        top: 0;
+        opacity: 1;
+      }
+    }
+  }
+
+  .btn-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+
+    a {
+      @include hero_btn($primary2, $white, 10px, 45px, 5px);
+    }
+  }
+}
+
+// end doctor section
+
+// contact section
+.contact_section {
+  position: relative;
+
+  .heading_container {
+    margin-bottom: 25px;
+
+    h2 {
+      text-transform: uppercase;
+    }
+  }
+
+  .form_container {
+    input {
+      width: 100%;
+      border: none;
+      height: 50px;
+      margin-bottom: 15px;
+      padding-left: 20px;
+      outline: none;
+      color: #101010;
+      background: #eeeeee;
+
+      &::placeholder {
+        color: $black;
+      }
+
+      &.message-box {
+        height: 175px;
+      }
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      text-transform: uppercase;
+      @include hero_btn($primary2, $white, 12px, 55px, 5px);
+    }
+  }
+
+  .map_container {
+    height: 368px;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+
+    .map {
+      height: 100%;
+      flex: 1;
+
+      #googleMap {
+        height: 100%;
+      }
+    }
+  }
+}
+
+// end contact section
+
+// client section
+
+.client_section {
+  .heading_container {
+    align-items: center;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 45px;
+    border-radius: 15px;
+
+    .img-box {
+      margin-bottom: 15px;
+      min-width: 145px;
+      max-width: 145px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        border-radius: 100%;
+        border: 7px solid rgba($color: #fff, $alpha: .45);
+      }
+    }
+
+    .detail-box {
+      display: flex;
+      flex-direction: column;
+
+      .name {
+
+        img {
+          width: 25px;
+          margin-bottom: 5px;
+        }
+
+        h6 {
+          color: $primary1;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .carousel_btn-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: unset;
+    width: 45px;
+    height: 45px;
+    border: none;
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center;
+    background-color: $primary1;
+    background-position: center;
+    border-radius: 5px;
+    margin: 0 2.5px;
+
+    &:hover {
+      background-color: $primary2;
+    }
+  }
+
+  .carousel-control-next {
+    left: initial;
+  }
+}
+
+// end client section
+
+// footer section
+.footer_section {
+  background: darken($color: $primary2, $amount: 10);
+  color: $white;
+  padding: 60px 0 15px 0;
+  position: relative;
+
+  h4 {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .footer_col {
+    margin-bottom: 30px;
+  }
+
+  .footer_contact {
+    .contact_link_box {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        margin: 5px 0;
+        color: $white;
+
+        i {
+          margin-right: 5px;
+        }
+
+        &:hover {
+          color: $primary1;
+        }
+      }
+    }
+  }
+
+  .footer_social {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      border-radius: 100%;
+      margin-right: 10px;
+      font-size: 24px;
+
+      &:hover {
+        color: $primary1;
+      }
+    }
+  }
+
+  .footer_links {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      color: $white;
+
+      &:hover {
+        color: $primary1;
+      }
+    }
+  }
+
+  form {
+    input {
+      border: none;
+      background-color: #fefefe;
+      width: 100%;
+      height: 45px;
+      color: $black;
+      outline: none;
+      border-radius: 5px;
+      padding: 0 15px;
+
+      &::placeholder {
+        color: #777;
+      }
+    }
+
+    button {
+      width: 100%;
+      text-align: center;
+      @include hero_btn($primary1, $white, 10px, 55px, 5px);
+      margin-top: 15px;
+    }
+  }
+
+  .footer-info {
+    text-align: center;
+
+    p {
+      color: $white;
+      padding: 25px 0;
+      margin: 0;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
+
+// end footer section

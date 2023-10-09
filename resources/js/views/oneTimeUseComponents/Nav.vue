@@ -1,135 +1,42 @@
 <template>
-  <header class="header rs-nav header-transparent">
-    <div class="top-bar">
-      <div class="container">
-        <div class="row d-flex justify-content-between">
-          <div class="topbar-left">
-            <ul>
-              <li>
-                <router-link to="/contact">
-                  <i class="fa fa-question-circle"></i>Contact us
-                </router-link>
-              </li>
-              <li v-show="institution_email_one">
-                <a :href="'mailto:' + institution_email_one">
-                  <i class="fa fa-envelope-o"></i> Mail
-                </a>
-              </li>
-              <li v-show="institution_phone_one">
-                <a :href="'tel:' + institution_phone_one">
-                  <i class="fa fa-phone"></i>Call
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="topbar-right">
-            <ul>
-              <li v-show="user_role == false" class="dropdown">
-                <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i
-                    class="fa fa-sign-in"> </i> LOGIN</a>
-                <br /><br />
-                <ul class="dropdown-menu with-lines d-flex justify-content-center align-items-center">
-                  <br />
-                  <li><router-link style="color: black;" to="/studentLogin">Student</router-link></li>
-                  <div class="dropdown-divider"></div>
-                  <li><router-link style="color: black;" to="/parentLogin">Parent</router-link></li>
-                  <div class="dropdown-divider"></div>
-                  <li><router-link style="color: black;" to="/staffLogin">Staff</router-link></li>
-                  <br /><br />
-                </ul>
-              </li>
+  <header class="header_section">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <span>
+            Orthoc
+          </span>
+        </a>
 
-              <li v-if="user_role == 'Administrator'">
-                <a href="/ui/adminDash">
-                  <i class="fa fa-bar-chart"> </i> PORTAL
-                </a>
-              </li>
-              <li v-if="user_role == 'Teacher'">
-                <a href="/ui/teacherDash">
-                  <i class="fa fa-bar-chart"> </i> PORTAL
-                </a>
-              </li>
-              <li v-if="user_role == 'NonTeaching'">
-                <a href="/ui/staffDash">
-                  <i class="fa fa-bar-chart"> </i> PORTAL
-                </a>
-              </li>
-              <li v-if="user_role == 'Parent'">
-                <a href="/ui/parentDash">
-                  <i class="fa fa-bar-chart"> </i> PORTAL
-                </a>
-              </li>
-              <li v-if="user_role == 'Student'">
-                <a href="/ui/studentDash">
-                  <i class="fa fa-bar-chart"> </i> PORTAL
-                </a>
-              </li>
-            </ul>
-          </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""> </span>
+        </button>
 
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item" :class="{ active: $route.path === '/' }">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" :class="{ active: $route.path === '/about' }">
+              <a class="nav-link" href="/about"> About</a>
+            </li>
+            <li class="nav-item" :class="{ active: $route.path === '/departments' }">
+              <a class="nav-link" href="/departments">Departments</a>
+            </li>
+            <li class="nav-item" :class="{ active: $route.path === '/doctors' }">
+              <a class="nav-link" href="/doctors">Doctors</a>
+            </li>
+            <li class="nav-item" :class="{ active: $route.path === '/contact' }">
+              <a class="nav-link" href="/contact">Contact Us</a>
+            </li>
+            <form class="form-inline">
+              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </ul>
         </div>
-      </div>
-    </div>
-    <div class="sticky-header navbar-expand-lg">
-      <div class="menu-bar clearfix">
-        <div class="container clearfix">
-          <!-- Header Logo ==== -->
-          <div class="menu-logo">
-            <router-link to="/">
-              <img v-show="! institution_logo" style="border-radius: 10px;" src="assets/images/logo.png" alt="institution_name">
-              <img v-show="institution_logo" style="border-radius: 10px;" :src="institution_logo" :alt="institution_name">
-            </router-link>
-          </div>
-          <!-- Mobile Nav Button ==== -->
-          <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse"
-            data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <!-- Author Nav ==== -->
-
-          <!-- Navigation Menu ==== -->
-          <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
-            <ul class="nav navbar-nav">
-              <li :class="{ active: $route.path === '/' }">
-                <router-link to="/">Home</router-link>
-              </li>
-
-              <li :class="{ active: $route.path === '/about' }">
-                <router-link to="/about">About</router-link>
-              </li>
-
-              <li :class="{ active: $route.path === '/events' }">
-                <router-link to="/events">Events</router-link>
-              </li>
-
-              <li :class="{ active: $route.path === '/courses' }">
-                <router-link to="/courses">Subjects</router-link>
-              </li>
-
-              <li :class="{ active: $route.path === '/enrollment' }">
-                <router-link to="/enrollment">Enrollment</router-link>
-              </li>
-              <li :class="{ active: $route.path === '/articles' }">
-                <router-link to="/articles">Articles</router-link>
-              </li>
-              <li :class="{ active: $route.path === '/gallery' }">
-                <router-link to="/gallery">Gallery</router-link>
-              </li>
-              <li :class="{ active: $route.path === '/contact' }">
-                <router-link to="/contact">Contact us</router-link>
-              </li>
-
-            </ul>
-            <div class="nav-social-link">
-              <a href="javascript:;"><i class="fa fa-facebook"></i></a>
-              <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
+      </nav>
     </div>
   </header>
 </template>

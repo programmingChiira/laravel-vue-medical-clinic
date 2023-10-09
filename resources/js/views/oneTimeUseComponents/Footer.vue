@@ -1,86 +1,106 @@
 <!-- Home.vue -->
 <template>
-  <div class="page-wraper">
-    <footer>
-      <div class="footer-top">
-        <br />
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 footer-col-4">
-              <div class="widget">
-                <h5 class="footer-title">Sign Up For A Newsletter</h5>
-                <p class="text-capitalize m-b20">Weekly Breaking news analysis and
-                  cutting edge advices on job searching.</p>
-                <div class="subscribe-form m-b20">
-                  <form class="subscription-form"
-                    action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
-                    <div class="ajax-message"></div>
-                    <div class="input-group">
-                      <input name="email" required="required" class="form-control" placeholder="Your Email Address"
-                        type="email">
-                      <span class="input-group-btn">
-                        <button name="submit" value="Submit" type="submit" class="btn"><i
-                            class="fa fa-arrow-right"></i></button>
-                      </span>
-                    </div>
-                  </form>
-                </div>
-              </div>
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_contact">
+            <h4>
+              Reach at..
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
             </div>
-            <div class="col-12 col-lg-5 col-md-7 col-sm-12">
-              <div class="row">
-                <div class="col-4 col-lg-4 col-md-4 col-sm-4">
-                  <div class="widget footer_widget">
-                    <h5 class="footer-title">Insitution</h5>
-                    <ul>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about-1.html">About</a></li>
-                      <li><a href="faq-1.html">FAQs</a></li>
-                      <li><a href="contact-1.html">Contact</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-4 col-lg-4 col-md-4 col-sm-4">
-                  <div class="widget footer_widget">
-                    <h5 class="footer-title">Get In Touch</h5>
-                    <ul>
-                      <li><a href="http://educhamp.themetrades.com/admin/index.html">Dashboard</a></li>
-                      <li><a href="blog-classic-grid.html">Blog</a></li>
-                      <li><a href="portfolio.html">Portfolio</a></li>
-                      <li><a href="event.html">Event</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-4 col-lg-4 col-md-4 col-sm-4">
-                  <div class="widget footer_widget">
-                    <h5 class="footer-title">Courses</h5>
-                    <ul>
-                      <li><a href="courses.html">Courses</a></li>
-                      <li><a href="courses-details.html">Details</a></li>
-                      <li><a href="membership.html">Membership</a></li>
-                      <li><a href="profile.html">Profile</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          </div>
+          <div class="footer_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center"><a target="_blank"
-                href="https://www.templateshub.net">Templates Hub</a></div>
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_detail">
+            <h4>
+              About
+            </h4>
+            <p>
+              Beatae provident nobis mollitia magnam voluptatum, unde dicta facilis minima veniam corporis laudantium alias tenetur eveniet illum reprehenderit fugit a delectus officiis blanditiis ea.
+            </p>
           </div>
         </div>
+        <div class="col-md-6 col-lg-2 mx-auto footer_col">
+          <div class="footer_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="footer_links">
+              <a class="active" href="index.html">
+                Home
+              </a>
+              <a class="" href="about.html">
+                About
+              </a>
+              <a class="" href="departments.html">
+                Departments
+              </a>
+              <a class="" href="doctors.html">
+                Doctors
+              </a>
+              <a class="" href="contact.html">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col ">
+          <h4>
+            Newsletter
+          </h4>
+          <form action="#">
+            <input type="email" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
       </div>
-    </footer>
-    <!-- Footer END ==== -->
-    <button id="scrollToTop" class="back-to-top fa fa-chevron-up"></button>
-
-  </div>
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Free Html Templates<br><br></a>
+            &copy; <span id="displayYear"></span> Distributed By
+            <a href="https://themewagon.com/">ThemeWagon</a>
+        </p>
+       
+      </div>  
+    </div>
+  </footer>
 </template>
   
 <script>

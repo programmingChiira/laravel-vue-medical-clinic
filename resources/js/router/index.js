@@ -4,73 +4,19 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('../views/Home.vue'),
+    component: () => import('../views/authenticated/index.vue'),
   },
 
   {
     path: '/about',
     name: 'about',
-    component: () => import('../views/About.vue'),
-  },
-
-  {
-    path: '/events',
-    name: 'events',
-    component: () => import('../views/Event.vue'),
-  },
-
-  {
-    path: '/viewEvent',
-    name: 'viewEvent',
-    component: () => import('../views/ViewEvent.vue'),
-  },
-
-  {
-    path: '/courses',
-    name: 'courses',
-    component: () => import('../views/Course.vue'),
-  },
-
-  {
-    path: '/viewCourse',
-    name: 'viewCourse',
-    component: () => import('../views/ViewCourse.vue'),
-  },
-
-  {
-    path: '/enrollment',
-    name: 'enrollment',
-    component: () => import('../views/Enrollment.vue'),
-  },
-
-  {
-    path: '/articles',
-    name: 'articles',
-    component: () => import('../views/Article.vue'),
-  },
-
-  {
-    path: '/viewArticle',
-    name: 'viewArticle',
-    component: () => import('../views/ViewArticle.vue'),
-  },
-
-  {
-    path: '/gallery',
-    name: 'gallery',
-    component: () => import('../views/Gallery.vue'),
-  },
-
-  {
-    path: '/viewImage',
-    name: 'viewImage',
-    component: () => import('../views/ViewGallery.vue'),
+    component: () => import('../views/authenticated/about.vue'),
   },
 
   {
     path: '/contact',
     name: 'contact',
-    component: () => import('../views/Contact.vue'),
+    component: () => import('../views/authenticated/contact.vue'),
   },
 
   {
