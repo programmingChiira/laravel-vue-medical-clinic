@@ -14,6 +14,18 @@ const routes = [
   },
 
   {
+    path: '/departments',
+    name: 'departments',
+    component: () => import('../views/authenticated/departments.vue'),
+  },
+
+  {
+    path: '/doctors',
+    name: 'doctors',
+    component: () => import('../views/authenticated/doctors.vue'),
+  },
+
+  {
     path: '/contact',
     name: 'contact',
     component: () => import('../views/authenticated/contact.vue'),
