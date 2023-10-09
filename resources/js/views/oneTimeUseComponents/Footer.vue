@@ -9,39 +9,25 @@
               Reach at..
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <router-link to="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
                 </span>
-              </a>
-              <a href="">
+              </router-link>
+              <router-link to="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Call 0712345678
                 </span>
-              </a>
-              <a href="">
+              </router-link>
+              <router-link to="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  eastek@gmail.com
                 </span>
-              </a>
+              </router-link>
             </div>
-          </div>
-          <div class="footer_social">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
           </div>
         </div>
         <div class="col-md-6 col-lg-3 footer_col">
@@ -60,21 +46,21 @@
               Links
             </h4>
             <div class="footer_links">
-              <a class="active" href="index.html">
+              <router-link class="active" to="/">
                 Home
-              </a>
-              <a class="" href="about.html">
+              </router-link>
+              <router-link class="" to="/about">
                 About
-              </a>
-              <a class="" href="departments.html">
+              </router-link>
+              <router-link class="" to="/departments">
                 Departments
-              </a>
-              <a class="" href="doctors.html">
+              </router-link>
+              <router-link class="" to="/doctors">
                 Doctors
-              </a>
-              <a class="" href="contact.html">
+              </router-link>
+              <router-link class="" to="/contact">
                 Contact Us
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -93,9 +79,7 @@
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates<br><br></a>
-            &copy; <span id="displayYear"></span> Distributed By
-            <a href="https://themewagon.com/">ThemeWagon</a>
+          <router-link to="/">Eastek<br><br></router-link>
         </p>
        
       </div>  
