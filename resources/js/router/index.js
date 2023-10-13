@@ -49,14 +49,6 @@ const routes = [
     component: () => import('../views/authenticated/userRegister.vue'),
   },
 
-  
-
-  {
-    path: '/ui/welcome',
-    name: 'welcome',
-    component: () => import('../views/ui/Admin/welcome.vue'),
-  },
-
   {
     path: '/:pathMatch(.*)*', // Catch-all route should be at the bottom
     name: 'not-found',
