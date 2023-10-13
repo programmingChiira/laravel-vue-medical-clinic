@@ -25,7 +25,6 @@
     <link href="authenticated/css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="authenticated/css/responsive.css" rel="stylesheet" />
-
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
 
     <style>

@@ -26,6 +26,9 @@
             <li class="nav-item" :class="{ active: $route.path === '/doctors' }">
               <router-link class="nav-link" to="/doctors">Doctors</router-link>
             </li>
+            <li class="nav-item" :class="{ active: $route.path === '/appointments' }">
+              <router-link class="nav-link" to="/appointments">Appointments</router-link>
+            </li>
             <li class="nav-item" :class="{ active: $route.path === '/contact' }">
               <router-link class="nav-link" to="/contact">Contact Us</router-link>
             </li>
