@@ -8,7 +8,8 @@
           </span>
         </router-link>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class=""> </span>
         </button>
 
@@ -31,6 +32,17 @@
             </li>
             <li class="nav-item" :class="{ active: $route.path === '/contact' }">
               <router-link class="nav-link" to="/contact">Contact Us</router-link>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a style="color: white;" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-sign-in"> </i> AUTH</a>
+              <ul style="text-align: center;" class="dropdown-menu d-flex justify-content-center align-items-center">
+                <li><router-link style="color: black;" to="/login">Login</router-link></li>
+                <div class="dropdown-divider"></div>
+                <li><router-link style="color: black;" to="/register">Register</router-link></li>
+                <br/>
+              </ul>
             </li>
           </ul>
         </div>

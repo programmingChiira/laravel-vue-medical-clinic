@@ -38,28 +38,18 @@ const routes = [
   },
 
   {
-    path: '/studentLogin',
-    name: 'studentLogin',
-    component: () => import('../views/auth/StudentLogin.vue'),
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/authenticated/userLogin.vue'),
   },
 
   {
-    path: '/parentLogin',
-    name: 'parentLogin',
-    component: () => import('../views/auth/ParentLogin.vue'),
+    path: '/register',
+    name: 'register',
+    component: () => import('../views/authenticated/userRegister.vue'),
   },
 
-  {
-    path: '/staffLogin',
-    name: 'staffLogin',
-    component: () => import('../views/auth/StaffLogin.vue'),
-  },
-
-  {
-    path: '/forgotPassword',
-    name: 'forgotPassword',
-    component: () => import('../views/auth/ForgotPwd.vue'),
-  },
+  
 
   {
     path: '/ui/welcome',
