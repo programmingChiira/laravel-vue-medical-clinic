@@ -18,47 +18,31 @@
                                 <div class="row no-margin">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <span class="form-label">Check In</span>
+                                            <span class="form-label">From (Availablity)</span>
                                             <input class="form-control" type="date" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <span class="form-label">Check Out</span>
+                                            <span class="form-label">To (Availablity)</span>
                                             <input class="form-control" type="date" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row no-margin">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-12">
                                         <div class="form-group">
-                                            <span class="form-label">Adults (18+)</span>
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                            </select>
-                                            <span class="select-arrow"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <span class="form-label">Children (0-17)</span>
-                                            <select class="form-control">
-                                                <option>0</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                            </select>
-                                            <span class="select-arrow"></span>
+                                            <span class="form-label">Age</span>
+                                            <input class="form-control" type="number" min="1" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <span class="form-label">Room Type</span>
+                                    <span class="form-label">Any predisposed conditions</span>
                                     <select class="form-control" required>
-                                        <option value="" selected hidden>Select room type</option>
-                                        <option>Private Room (1 to 2 People)</option>
-                                        <option>Family Room (1 to 4 People)</option>
+                                        <option value="" selected hidden>Select </option>
+                                        <option>No</option>
+                                        <option>Yes</option>
                                     </select>
                                     <span class="select-arrow"></span>
                                 </div>
