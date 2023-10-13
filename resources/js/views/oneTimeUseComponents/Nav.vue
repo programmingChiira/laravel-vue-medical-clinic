@@ -57,65 +57,16 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      id: "",
-      last_name: "",
-      user_role: "",
-      settings: [],
-      institution_logo: "",
-      institution_name: "",
-      institution_email_one: "",
-      institution_phone_one: "",
+      //
     };
   },
 
   mounted() {
     console.log('Component mounted.')
-    this.fetchSettings();
-    this.fetchUser();
   },
 
   methods: {
-    fetchUser() {
-      axios
-        .get("/api/user")
-        //.then((response) => (this.id = response.data.id))
-        .then(response => {
-          this.id = response.data.id
-          this.last_name = response.data.last_name
-          this.user_role = response.data.user_role
-        })
-        .catch((error) => {
-          if (error.response.status === 401) {
-            this.$emit("updateSidebar");
-            localStorage.removeItem("authenticated");
-          }
-        });
-
-      if (localStorage.getItem("authenticated")) {
-        this.loggedIn = true;
-      } else {
-        this.loggedIn = false;
-      }
-    },
-
-    fetchSettings() {
-      axios.get('/api/institutionGeneralSettings')
-        .then(response => {
-          this.settings = response.data.data;
-          if (this.settings.length > 0) {
-
-            const settingsData = this.settings[0];
-            this.id = settingsData.id;
-            this.institution_logo = settingsData.institution_logo;
-            this.institution_name = settingsData.institution_name;
-            this.institution_email_one = settingsData.institution_email_one;
-            this.institution_phone_one = settingsData.institution_phone_one;
-          }
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    },
+    //
   },
 
 

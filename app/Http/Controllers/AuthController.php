@@ -151,69 +151,7 @@ class AuthController extends Controller
 
     public function teacher_register(Request $request)
     {
-        $request->validate([
-            'first_name' => 'required',
-            'middle_name' => 'required',
-            'last_name' => 'required',
-            'uniqueId' => 'required',
-            'email' => 'required|email|unique:users',
-            'phone_no' => 'nullable',
-            'gender' => 'nullable',
-            'teacher_tsc_no' => 'required',
-            'password' => 'required',
-            'departments' => 'required|array',
-            'department_slug' => 'required|array',
-            'department_roles' => 'required|array',
-        ]);
-
-        try {
-            // Create a new User instance
-            $teacherRegistration = new User();
-            $teacherRegistration->first_name = $request->input('first_name');
-            $teacherRegistration->middle_name = $request->input('middle_name');
-            $teacherRegistration->last_name = $request->input('last_name');
-            $teacherRegistration->slug = $request->input('uniqueId');
-            $teacherRegistration->email = $request->input('email');
-            $teacherRegistration->phone_no = $request->input('phone_no');
-            $teacherRegistration->user_role = 'Teacher';
-            $teacherRegistration->gender = $request->input('gender');
-            $teacherRegistration->teacher_tsc_no = $request->input('teacher_tsc_no');
-            $teacherRegistration->user_account_status = $request->input('user_account_status');
-            $teacherRegistration->password = Hash::make($request->input('password'));
-            $teacherRegistration->save();
-
-            $teacherName = $request->input('first_name') . ' ' . $request->input('middle_name') . ' ' . $request->input('last_name');
-            $teacherSlug = $request->input('uniqueId');
-            $courses = $request->input('courses');
-            $course_slug = $request->input('course_slug');
-            $departments = $request->input('departments');
-            $department_roles = $request->input('department_roles');
-            $department_slug = $request->input('department_slug');
-            $class_stream = $request->input('class_stream');
-
-            TeacherDepartment::create([
-                'teacher_name' => $teacherName,
-                'teacher_slug' => $teacherSlug,
-                'department' => json_encode($departments),
-                'department_role' => json_encode($department_roles),
-                'department_slug' => json_encode($department_slug),
-            ]);
-
-            TeacherCourse::create([
-                'teacher_name' => $teacherName,
-                'teacher_slug' => $teacherSlug,
-                'course' => json_encode($courses),
-                'course_slug' => json_encode($course_slug),
-                'department' => json_encode($departments),
-                'department_slug' => json_encode($department_slug),
-                'class_stream' => json_encode($class_stream),
-            ]);
-
-
-            return response()->json(['message' => 'Teacher registered successfully'], 200);
-        } catch (\Exception $e) {
-            return response()->json(['message' => 'An error occurred while registering teacher', 'error' => $e->getMessage()], 500);
-        }
+        //
     }
 
     public function updateProfile(Request $request)
