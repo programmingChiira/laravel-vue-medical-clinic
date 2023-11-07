@@ -1,24 +1,24 @@
-.navbar {
-  box-shadow: $navbar-box-shadow;
+.sidestbar {
+  box-shadow: $sidestbar-box-shadow;
 
-  .navbar-brand {
+  .sidestbar-brand {
     color: $dark;
     @include font-size($font-size-sm);
   }
   .nav-link {
     color: $dark;
-    padding: $navbar-nav-link-padding;
+    padding: $sidestbar-nav-link-padding;
     font-weight: $font-weight-normal;
     font-size: $font-size-sm;
   }
 
-  &.navbar-absolute {
+  &.sidestbar-absolute {
     position: absolute;
     width: 100%;
     z-index: 1;
   }
 
-  &.navbar-transparent {
+  &.sidestbar-transparent {
     .nav-link {
       &, i {
         color: $white;
@@ -31,56 +31,56 @@
       }
     }
 
-    .navbar-toggler {
-      .navbar-toggler-icon {
-        .navbar-toggler-bar {
+    .sidestbar-toggler {
+      .sidestbar-toggler-icon {
+        .sidestbar-toggler-bar {
           background: $white;
         }
       }
     }
 
-    .navbar-collapse{
+    .sidestbar-collapse{
       border-radius: $border-radius-xl;
     }
   }
 
-  &.navbar-dark {
-    .navbar-collapse.show,
-    .navbar-collapse.collapsing
+  &.sidestbar-dark {
+    .sidestbar-collapse.show,
+    .sidestbar-collapse.collapsing
     {
       .dropdown-header.text-dark{
         color: $white !important;
       }
     }
   }
-  .sidenav-toggler-inner{
-    width: $sidenav-toggler-width;
-    .sidenav-toggler-line{
-      transition: $sidenav-toggler-line-transition;
+  .sidenavbar-toggler-inner{
+    width: $sidenavbar-toggler-width;
+    .sidenavbar-toggler-line{
+      transition: $sidenavbar-toggler-line-transition;
       background: $body-color;
       border-radius: $border-radius-xs;
       position: relative;
       display: block;
-      height: $sidenav-toggler-line-height;
+      height: $sidenavbar-toggler-line-height;
       &:not(:last-child){
-        margin-bottom: $sidenav-toggler-line-margin-bottom;
+        margin-bottom: $sidenavbar-toggler-line-margin-bottom;
       }
     }
   }
-  .g-sidenav-show.g-sidenav-pinned &{
-    .sidenav-toggler-inner{
-      .sidenav-toggler-line:first-child,
-      .sidenav-toggler-line:last-child {
-          width: $sidenav-toggler-line-active-width;
-          transform: $sidenav-toggler-line-transform;
+  .g-sidenavbar-show.g-sidenavbar-pinned &{
+    .sidenavbar-toggler-inner{
+      .sidenavbar-toggler-line:first-child,
+      .sidenavbar-toggler-line:last-child {
+          width: $sidenavbar-toggler-line-active-width;
+          transform: $sidenavbar-toggler-line-transform;
       }
     }
   }
 }
 
-.navbar-light {
+.sidestbar-light {
   background-color: $white !important;
-  .navbar-toggler{
+  .sidestbar-toggler{
     border: none;
     &:focus{
       box-shadow: none;
@@ -88,50 +88,50 @@
   }
 }
 
-.navbar-toggler {
-  .navbar-toggler-icon {
+.sidestbar-toggler {
+  .sidestbar-toggler-icon {
     background-image: none;
 
-    .navbar-toggler-bar {
-      display: $navbar-toggler-bar-display;
-      position: $navbar-toggler-bar-position;
-      width: $navbar-toggler-bar-width;
-      height: $navbar-toggler-bar-height;
-      border-radius: $navbar-toggler-bar-radius;
+    .sidestbar-toggler-bar {
+      display: $sidestbar-toggler-bar-display;
+      position: $sidestbar-toggler-bar-position;
+      width: $sidestbar-toggler-bar-width;
+      height: $sidestbar-toggler-bar-height;
+      border-radius: $sidestbar-toggler-bar-radius;
       background: $gray-600;
-      transition: $navbar-toggler-bar-transition;
+      transition: $sidestbar-toggler-bar-transition;
       margin: 0 auto;
 
       &.bar2,
       &.bar3 {
-        margin-top: $navbar-toggler-bar-margin-top;
+        margin-top: $sidestbar-toggler-bar-margin-top;
       }
     }
   }
 
   &[aria-expanded="true"] {
-    .navbar-toggler-bar {
+    .sidestbar-toggler-bar {
       &.bar1 {
-        transform: $navbar-toggler-bar-1-transform;
-        transform-origin: $navbar-toggler-bar-1-transform-origin;
-        margin-top: $navbar-toggler-bar-1-margin-top;
+        transform: $sidestbar-toggler-bar-1-transform;
+        transform-origin: $sidestbar-toggler-bar-1-transform-origin;
+        margin-top: $sidestbar-toggler-bar-1-margin-top;
       }
 
       &.bar2 {
-        opacity: $navbar-toggler-bar-2-opacity;
+        opacity: $sidestbar-toggler-bar-2-opacity;
       }
 
       &.bar3 {
-        transform: $navbar-toggler-bar-3-transform;
-        transform-origin: $navbar-toggler-bar-3-transform-origin;
-        margin-top: $navbar-toggler-bar-3-margin-top;
+        transform: $sidestbar-toggler-bar-3-transform;
+        transform-origin: $sidestbar-toggler-bar-3-transform-origin;
+        margin-top: $sidestbar-toggler-bar-3-margin-top;
       }
     }
   }
 }
 
 @include media-breakpoint-up(lg) {
-  :not(.main-content) .navbar {
+  :not(.main-content) .sidestbar {
     .dropdown {
       .dropdown-menu {
         top: 2.25rem !important;
@@ -145,18 +145,18 @@
 }
 
 @include media-breakpoint-down(lg) {
-  .navbar {
-    &.navbar-transparent {
-      .navbar-collapse {
+  .sidestbar {
+    &.sidestbar-transparent {
+      .sidestbar-collapse {
         padding-top: $spacer * 0.5;
         padding-bottom: $spacer * 0.5;
       }
 
-      .navbar-collapse.collapsing {
+      .sidestbar-collapse.collapsing {
         background: $white;
       }
 
-      .navbar-collapse.show {
+      .sidestbar-collapse.show {
         background: $white;
         .nav-link,
         i {
@@ -165,21 +165,21 @@
       }
     }
 
-    .g-sidenav-show & {
-      &:not(.sidenav).navbar-main {
-        .navbar-collapse {
+    .g-sidenavbar-show & {
+      &:not(.sidenavbar).sidestbar-main {
+        .sidestbar-collapse {
           display: flex !important;
           flex-basis: auto;
         }
 
-        .navbar-nav {
+        .sidestbar-nav {
           flex-direction: row;
         }
       }
     }
 
-    &.navbar-transparent {
-      .navbar-collapse {
+    &.sidestbar-transparent {
+      .sidestbar-collapse {
         box-shadow: $box-shadow-lg;
       }
     }
@@ -187,10 +187,10 @@
 }
 
 @include media-breakpoint-down(md) {
-  .navbar-collapse {
+  .sidestbar-collapse {
     position: relative;
 
-    .navbar-nav {
+    .sidestbar-nav {
       width: 100%;
 
       .nav-item {
@@ -213,7 +213,7 @@
   }
 }
 @include media-breakpoint-down(sm) {
-  .navbar-nav {
+  .sidestbar-nav {
     .nav-item {
       &.dropdown {
         .dropdown-menu {

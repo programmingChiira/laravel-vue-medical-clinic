@@ -1,13 +1,16 @@
 <template>
-  <body class="g-sidenav-show   bg-gray-100">
+  <body class="g-sidenavbar-show   bg-gray-100">
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
     <aside
-      class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
-      id="sidenav-main">
-        
+      class="sidenavbar bg-white sidestbar sidestbar-vertical sidestbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 ">
+      <div class="sidenavbar-header">
+        <router-link class="sidestbar-brand m-0" to="/">
+          <span class="ms-1 font-weight-bold"> <i class="fa fa-home"></i> Home</span>
+        </router-link>
+      </div>
       <hr class="horizontal dark mt-0">
-      <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
-        <ul class="navbar-nav">
+      <div class="collapse sidestbar-collapse  w-auto " id="sidenavbar-collapse-main">
+        <ul class="sidestbar-nav">
           <li class="nav-item">
             <router-link class="nav-link active" to="/">
               <div
@@ -18,117 +21,227 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./pages/tables.html">
+            <router-link class="nav-link " to="/">
               <div
                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
               </div>
               <span class="nav-link-text ms-1">Tables</span>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./pages/billing.html">
+            <router-link class="nav-link " to="/">
               <div
                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
               </div>
               <span class="nav-link-text ms-1">Billing</span>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./pages/virtual-reality.html">
+            <router-link class="nav-link " to="/">
               <div
                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-app text-info text-sm opacity-10"></i>
               </div>
               <span class="nav-link-text ms-1">Virtual Reality</span>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./pages/rtl.html">
+            <router-link class="nav-link " to="/">
               <div
                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
               </div>
               <span class="nav-link-text ms-1">RTL</span>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item mt-3">
             <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./pages/profile.html">
+            <router-link class="nav-link " to="/">
               <div
                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
               </div>
               <span class="nav-link-text ms-1">Profile</span>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./pages/sign-in.html">
+            <router-link class="nav-link " to="/">
               <div
                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
               </div>
               <span class="nav-link-text ms-1">Sign In</span>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./pages/sign-up.html">
+            <router-link class="nav-link " to="/">
               <div
                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-collection text-info text-sm opacity-10"></i>
               </div>
               <span class="nav-link-text ms-1">Sign Up</span>
-            </a>
+            </router-link>
           </li>
         </ul>
       </div>
-      <div class="sidenav-footer mx-3 ">
-        <div class="card card-plain shadow-none" id="sidenavCard">
-
+      <div class="sidenavbar-footer mx-3 ">
+        <div class="card card-plain shadow-none" id="sidenavbarCard">
+          <img class="w-50 mx-auto" src="argon/assets/img/illustrations/icon-documentation.svg"
+            alt="sidebar_illustration">
+          <div class="card-body text-center p-3 w-100 pt-0">
+            <div class="docs-info">
+              <h6 class="mb-0">Medic</h6>
+            </div>
+          </div>
         </div>
-        <a class="btn btn-danger btn-sm mb-0 w-100" href="#" type="button">LOGOUT</a>
+        <router-link class="btn btn-danger btn-sm mb-0 w-100"
+          to="/" type="button">LOGOUT
+        </router-link>
       </div>
     </aside>
+
+    <aside v-if="showAside"
+      class="bg-white sidestbar sidestbar-vertical sidestbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
+      id="sidenavbar-main">
+      <div style="margin-bottom: 40px;">
+        <a style="float:right;margin: 10px;" href="javascript:;" @click="toggleAside">
+          <i class="fa fa-close fixed-plugin-button-nav cursor-pointer"></i>
+        </a>
+      </div>
+      <div class="collapse sidestbar-collapse  w-auto " id="sidenavbar-collapse-main">
+        <ul class="sidestbar-nav">
+          <li class="nav-item">
+            <router-link class="nav-link active" to="/">
+              <div
+                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Dashboard</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link " to="/">
+              <div
+                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Tables</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link " to="/">
+              <div
+                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Billing</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link " to="/">
+              <div
+                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-app text-info text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Virtual Reality</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link " to="/">
+              <div
+                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">RTL</span>
+            </router-link>
+          </li>
+          <li class="nav-item mt-3">
+            <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link " to="/">
+              <div
+                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Profile</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link " to="/">
+              <div
+                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Sign In</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link " to="/">
+              <div
+                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-collection text-info text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Sign Up</span>
+            </router-link>
+          </li>
+        </ul>
+      </div>
+      <div class="sidenavbar-footer mx-3 ">
+        <div class="card card-plain shadow-none" id="sidenavbarCard">
+          <img class="w-50 mx-auto" src="argon/assets/img/illustrations/icon-documentation.svg"
+            alt="sidebar_illustration">
+          <div class="card-body text-center p-3 w-100 pt-0">
+            <div class="docs-info">
+              <h6 class="mb-0">Medic</h6>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-danger btn-sm mb-0 w-100"
+          to="/" type="button">LOGOUT
+        </a>
+      </div>
+    </aside>
+
     <main class="main-content position-relative border-radius-lg ">
-      <!-- Navbar -->
-      <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
+      <!-- sidestbar -->
+      <nav class="sidestbar sidestbar-main sidestbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="sidestbarBlur"
         data-scroll="false">
         <div class="container-fluid py-1 px-3">
-          <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="collapse sidestbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="sidestbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
               <div class="input-group">
+                <ul class="sidestbar-nav  justify-content-end">
+                  <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                    <a href="javascript:;" class="nav-link text-white p-0" id="iconsidestbarsidenavbar"
+                      @click="toggleAside">
+                      <div class="sidenavbar-toggler-inner">
+                        <i class="sidenavbar-toggler-line bg-white"></i>
+                        <i class="sidenavbar-toggler-line bg-white"></i>
+                        <i class="sidenavbar-toggler-line bg-white"></i>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
 
 
-
-
-            <ul class="navbar-nav  justify-content-end">
-              <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <i class="fa fa-bell cursor-pointer"></i>
+            <ul class="sidestbar-nav  justify-content-end">
+              <li class="nav-item px-3 d-flex align-items-center">
+                <a href="javascript:;" class="nav-link text-white p-0">
+                  <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <!-- End Navbar -->
+      <!-- End sidestbar -->
       <div class="container-fluid py-4">
         <div class="row">
           <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -373,8 +486,9 @@
             </div>
           </div>
 
-          <hr />
-          <hr />
+          <hr/>
+          <hr/>
+
           <div class="col-lg-12">
             <div class="card">
               <div class="card-header pb-0 p-3">
@@ -453,7 +567,7 @@
               <div class="col-lg-6 mb-lg-0 mb-4">
                 <div class="copyright text-center text-sm text-muted text-lg-start">
                   Made with <i class="fa fa-heart"></i> by
-                  <a href="https://github.com/programmingChiira" class="font-weight-bold" target="_blank">Chiira</a>
+                  <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Chiira</a>
                 </div>
               </div>
             </div>
@@ -470,22 +584,26 @@ import Footer from '@/views/oneTimeUseComponents/Footer.vue';
 import Nav from '@/views/oneTimeUseComponents/Nav.vue';
 
 export default {
-    components: {
-        Footer,
-        Nav,
-    },
+  components: {
+    Footer,
+    Nav,
+  },
 
-    data() {
-        return {
-            //
-        };
-    },
+  data() {
+    return {
+      showAside: false
+    };
+  },
 
-    mounted() {
-        document.title = 'Home :- Intelligent system';
-    },
-    methods: {
-        //
-    },
+  mounted() {
+    document.title = 'Admin dashboard :- Medic';
+  },
+  methods: {
+    toggleAside() {
+      this.showAside = !this.showAside;
+    }
+  },
 };
 </script>
+
+<style scoped></style>

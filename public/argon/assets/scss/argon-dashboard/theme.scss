@@ -19,7 +19,7 @@
 // {{ site.product.name }} components
 
 // Variables
-@import "variables/navbar-vertical";
+@import "variables/sidestbar-vertical";
 @import "variables/social-buttons";
 @import "variables/breadcrumb";
 
@@ -42,8 +42,8 @@
 @import "gradients";
 @import "info-areas";
 @import "misc";
-@import "navbar";
-@import "navbar-vertical";
+@import "sidestbar";
+@import "sidestbar-vertical";
 @import "nav";
 @import "pagination";
 @import "popovers";

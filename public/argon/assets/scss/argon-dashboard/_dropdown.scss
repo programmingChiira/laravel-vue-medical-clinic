@@ -95,7 +95,7 @@
 }
 
 @include media-breakpoint-down(lg) {
-  .navbar-toggler + .navbar-collapse {
+  .sidestbar-toggler + .sidestbar-collapse {
     .dropdown:not(.nav-item) {
       .dropdown-menu {
         display: block;
@@ -283,7 +283,7 @@
 
 // Keyframes
 
-@keyframes show-navbar-dropdown {
+@keyframes show-sidestbar-dropdown {
   0% {
     opacity: 0;
     transform: translate(0, 10px) perspective(200px);
@@ -296,7 +296,7 @@
   }
 }
 
-@keyframes hide-navbar-dropdown {
+@keyframes hide-sidestbar-dropdown {
   from {
     opacity: 1;
   }

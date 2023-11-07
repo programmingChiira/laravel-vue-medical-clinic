@@ -9,13 +9,13 @@
       var ps = new PerfectScrollbar(mainpanel);
     };
 
-    if (document.getElementsByClassName('sidenav')[0]) {
-      var sidebar = document.querySelector('.sidenav');
+    if (document.getElementsByClassName('sidenavbar')[0]) {
+      var sidebar = document.querySelector('.sidenavbar');
       var ps1 = new PerfectScrollbar(sidebar);
     };
 
-    if (document.getElementsByClassName('navbar-collapse')[0]) {
-      var fixedplugin = document.querySelector('.navbar:not(.navbar-expand-lg) .navbar-collapse');
+    if (document.getElementsByClassName('sidestbar-collapse')[0]) {
+      var fixedplugin = document.querySelector('.sidestbar:not(.sidestbar-expand-lg) .sidestbar-collapse');
       var ps2 = new PerfectScrollbar(fixedplugin);
     };
 
@@ -26,9 +26,9 @@
   };
 })();
 
-// Verify navbar blur on scroll
-if (document.getElementById('navbarBlur')) {
-  navbarBlurOnScroll('navbarBlur');
+// Verify sidestbar blur on scroll
+if (document.getElementById('sidestbarBlur')) {
+  sidestbarBlurOnScroll('sidestbarBlur');
 }
 
 // initialization of Tooltips
@@ -75,8 +75,8 @@ if (document.querySelector('.fixed-plugin')) {
   var fixedPluginButtonNav = document.querySelector('.fixed-plugin-button-nav');
   var fixedPluginCard = document.querySelector('.fixed-plugin .card');
   var fixedPluginCloseButton = document.querySelectorAll('.fixed-plugin-close-button');
-  var navbar = document.getElementById('navbarBlur');
-  var buttonNavbarFixed = document.getElementById('navbarFixed');
+  var sidestbar = document.getElementById('sidestbarBlur');
+  var buttonsidestbarFixed = document.getElementById('sidestbarFixed');
 
   if (fixedPluginButton) {
     fixedPluginButton.onclick = function() {
@@ -110,9 +110,9 @@ if (document.querySelector('.fixed-plugin')) {
     }
   }
 
-  if (navbar) {
-    if (navbar.getAttribute('data-scroll') == 'true' && buttonNavbarFixed) {
-      buttonNavbarFixed.setAttribute("checked", "true");
+  if (sidestbar) {
+    if (sidestbar.getAttribute('data-scroll') == 'true' && buttonsidestbarFixed) {
+      buttonsidestbarFixed.setAttribute("checked", "true");
     }
   }
 
@@ -133,14 +133,14 @@ function sidebarColor(a) {
     a.classList.remove('active');
   }
 
-  var sidebar = document.querySelector('.sidenav');
+  var sidebar = document.querySelector('.sidenavbar');
   sidebar.setAttribute("data-color", color);
 
-  if (document.querySelector('#sidenavCard')) {
-    var sidenavCard = document.querySelector('#sidenavCard+.btn+.btn');
-    let sidenavCardClasses = ['btn', 'btn-sm', 'w-100', 'mb-0', 'bg-gradient-' + color];
-    sidenavCard.removeAttribute('class');
-    sidenavCard.classList.add(...sidenavCardClasses);
+  if (document.querySelector('#sidenavbarCard')) {
+    var sidenavbarCard = document.querySelector('#sidenavbarCard+.btn+.btn');
+    let sidenavbarCardClasses = ['btn', 'btn-sm', 'w-100', 'mb-0', 'bg-gradient-' + color];
+    sidenavbarCard.removeAttribute('class');
+    sidenavbarCard.classList.add(...sidenavbarCardClasses);
   }
 }
 
@@ -165,7 +165,7 @@ function sidebarType(a) {
     a.classList.remove('active');
   }
 
-  var sidebar = document.querySelector('.sidenav');
+  var sidebar = document.querySelector('.sidenavbar');
 
   for (var i = 0; i < colors.length; i++) {
     sidebar.classList.remove(colors[i]);
@@ -176,13 +176,13 @@ function sidebarType(a) {
 
   // Remove text-white/text-dark classes
   if (color == 'bg-white') {
-    var textWhites = document.querySelectorAll('.sidenav .text-white');
+    var textWhites = document.querySelectorAll('.sidenavbar .text-white');
     for (let i = 0; i < textWhites.length; i++) {
       textWhites[i].classList.remove('text-white');
       textWhites[i].classList.add('text-dark');
     }
   } else {
-    var textDarks = document.querySelectorAll('.sidenav .text-dark');
+    var textDarks = document.querySelectorAll('.sidenavbar .text-dark');
     for (let i = 0; i < textDarks.length; i++) {
       textDarks[i].classList.add('text-white');
       textDarks[i].classList.remove('text-dark');
@@ -190,7 +190,7 @@ function sidebarType(a) {
   }
 
   if (color == 'bg-default' && bodyDark) {
-    var textDarks = document.querySelectorAll('.navbar-brand .text-dark');
+    var textDarks = document.querySelectorAll('.sidestbar-brand .text-dark');
     for (let i = 0; i < textDarks.length; i++) {
       textDarks[i].classList.add('text-white');
       textDarks[i].classList.remove('text-dark');
@@ -200,71 +200,71 @@ function sidebarType(a) {
   // Remove logo-white/logo-dark
 
   if ((color == 'bg-white') && bodyWhite) {
-    var navbarBrand = document.querySelector('.navbar-brand-img');
-    var navbarBrandImg = navbarBrand.src;
+    var sidestbarBrand = document.querySelector('.sidestbar-brand-img');
+    var sidestbarBrandImg = sidestbarBrand.src;
 
-    if (navbarBrandImg.includes('logo-ct.png')) {
-      var navbarBrandImgNew = navbarBrandImg.replace("logo-ct", "logo-ct-dark");
-      navbarBrand.src = navbarBrandImgNew;
+    if (sidestbarBrandImg.includes('logo-ct.png')) {
+      var sidestbarBrandImgNew = sidestbarBrandImg.replace("logo-ct", "logo-ct-dark");
+      sidestbarBrand.src = sidestbarBrandImgNew;
     }
   } else {
-    var navbarBrand = document.querySelector('.navbar-brand-img');
-    var navbarBrandImg = navbarBrand.src;
-    if (navbarBrandImg.includes('logo-ct-dark.png')) {
-      var navbarBrandImgNew = navbarBrandImg.replace("logo-ct-dark", "logo-ct");
-      navbarBrand.src = navbarBrandImgNew;
+    var sidestbarBrand = document.querySelector('.sidestbar-brand-img');
+    var sidestbarBrandImg = sidestbarBrand.src;
+    if (sidestbarBrandImg.includes('logo-ct-dark.png')) {
+      var sidestbarBrandImgNew = sidestbarBrandImg.replace("logo-ct-dark", "logo-ct");
+      sidestbarBrand.src = sidestbarBrandImgNew;
     }
   }
 
   if (color == 'bg-white' && bodyDark) {
-    var navbarBrand = document.querySelector('.navbar-brand-img');
-    var navbarBrandImg = navbarBrand.src;
+    var sidestbarBrand = document.querySelector('.sidestbar-brand-img');
+    var sidestbarBrandImg = sidestbarBrand.src;
 
-    if (navbarBrandImg.includes('logo-ct.png')) {
-      var navbarBrandImgNew = navbarBrandImg.replace("logo-ct", "logo-ct-dark");
-      navbarBrand.src = navbarBrandImgNew;
+    if (sidestbarBrandImg.includes('logo-ct.png')) {
+      var sidestbarBrandImgNew = sidestbarBrandImg.replace("logo-ct", "logo-ct-dark");
+      sidestbarBrand.src = sidestbarBrandImgNew;
     }
   }
 }
 
-// Set Navbar Fixed
-function navbarFixed(el) {
+// Set sidestbar Fixed
+function sidestbarFixed(el) {
   let classes = ['position-sticky', 'bg-white', 'left-auto', 'top-2', 'z-index-sticky'];
-  const navbar = document.getElementById('navbarBlur');
+  const sidestbar = document.getElementById('sidestbarBlur');
 
   if (!el.getAttribute("checked")) {
     toggleNavLinksColor('blur');
-    navbar.classList.add(...classes);
-    navbar.setAttribute('data-scroll', 'true');
-    navbarBlurOnScroll('navbarBlur');
+    sidestbar.classList.add(...classes);
+    sidestbar.setAttribute('data-scroll', 'true');
+    sidestbarBlurOnScroll('sidestbarBlur');
     el.setAttribute("checked", "true");
   } else {
     toggleNavLinksColor('transparent');
-    navbar.classList.remove(...classes);
-    navbar.setAttribute('data-scroll', 'false');
-    navbarBlurOnScroll('navbarBlur');
+    sidestbar.classList.remove(...classes);
+    sidestbar.setAttribute('data-scroll', 'false');
+    sidestbarBlurOnScroll('sidestbarBlur');
     el.removeAttribute("checked");
   }
 };
 
-// Set Navbar Minimized
-function navbarMinimize(el) {
-  var sidenavShow = document.getElementsByClassName('g-sidenav-show')[0];
+// Set sidestbar Minimized
+function sidestbarMinimize(el) {
+  var sidenavbarShow = document.getElementsByClassName('g-sidenavbar-show')[0];
 
   if (!el.getAttribute("checked")) {
-    sidenavShow.classList.remove('g-sidenav-pinned');
-    sidenavShow.classList.add('g-sidenav-hidden');
+    sidenavbarShow.classList.remove('g-sidenavbar-pinned');
+    sidenavbarShow.classList.add('g-sidenavbar-hidden');
     el.setAttribute("checked", "true");
   } else {
-    sidenavShow.classList.remove('g-sidenav-hidden');
-    sidenavShow.classList.add('g-sidenav-pinned');
+    sidenavbarShow.classList.remove('g-sidenavbar-hidden');
+    sidenavbarShow.classList.add('g-sidenavbar-pinned');
     el.removeAttribute("checked");
   }
 }
 
 function toggleNavLinksColor(type) {
-  let navLinks = document.querySelectorAll('.navbar-main .nav-link, .navbar-main .breadcrumb-item, .navbar-main .breadcrumb-item a, .navbar-main h6')
-  let navLinksToggler = document.querySelectorAll('.navbar-main .sidenav-toggler-line')
+  let navLinks = document.querySelectorAll('.sidestbar-main .nav-link, .sidestbar-main .breadcrumb-item, .sidestbar-main .breadcrumb-item a, .sidestbar-main h6')
+  let navLinksToggler = document.querySelectorAll('.sidestbar-main .sidenavbar-toggler-line')
 
   if (type === "blur") {
     navLinks.forEach(element => {
@@ -288,25 +288,25 @@ function toggleNavLinksColor(type) {
 }
 
 
-// Navbar blur on scroll
-function navbarBlurOnScroll(id) {
-  const navbar = document.getElementById(id);
-  let navbarScrollActive = navbar ? navbar.getAttribute("data-scroll") : false;
+// sidestbar blur on scroll
+function sidestbarBlurOnScroll(id) {
+  const sidestbar = document.getElementById(id);
+  let sidestbarScrollActive = sidestbar ? sidestbar.getAttribute("data-scroll") : false;
   let scrollDistance = 5;
   let classes = ['bg-white', 'left-auto', 'position-sticky'];
   let toggleClasses = ['shadow-none'];
 
-  if (navbarScrollActive == 'true') {
+  if (sidestbarScrollActive == 'true') {
     window.onscroll = debounce(function() {
       if (window.scrollY > scrollDistance) {
-        blurNavbar();
+        blursidestbar();
       } else {
-        transparentNavbar();
+        transparentsidestbar();
       }
     }, 10);
   } else {
     window.onscroll = debounce(function() {
-      transparentNavbar();
+      transparentsidestbar();
     }, 10);
   }
 
@@ -314,31 +314,31 @@ function navbarBlurOnScroll(id) {
 
   if (isWindows) {
     var content = document.querySelector('.main-content');
-    if (navbarScrollActive == 'true') {
+    if (sidestbarScrollActive == 'true') {
       content.addEventListener('ps-scroll-y', debounce(function() {
         if (content.scrollTop > scrollDistance) {
-          blurNavbar();
+          blursidestbar();
         } else {
-          transparentNavbar();
+          transparentsidestbar();
         }
       }, 10));
     } else {
       content.addEventListener('ps-scroll-y', debounce(function() {
-        transparentNavbar();
+        transparentsidestbar();
       }, 10));
     }
   }
 
-  function blurNavbar() {
-    navbar.classList.add(...classes)
-    navbar.classList.remove(...toggleClasses)
+  function blursidestbar() {
+    sidestbar.classList.add(...classes)
+    sidestbar.classList.remove(...toggleClasses)
 
     toggleNavLinksColor('blur');
   }
 
-  function transparentNavbar() {
-    navbar.classList.remove(...classes)
-    navbar.classList.add(...toggleClasses)
+  function transparentsidestbar() {
+    sidestbar.classList.remove(...classes)
+    sidestbar.classList.add(...toggleClasses)
 
     toggleNavLinksColor('transparent');
   }
@@ -366,71 +366,71 @@ function debounce(func, wait, immediate) {
   };
 };
 
-// Toggle Sidenav
-const iconNavbarSidenav = document.getElementById('iconNavbarSidenav');
-const iconSidenav = document.getElementById('iconSidenav');
-const sidenav = document.getElementById('sidenav-main');
+// Toggle sidenavbar
+const iconsidestbarsidenavbar = document.getElementById('iconsidestbarsidenavbar');
+const iconsidenavbar = document.getElementById('iconsidenavbar');
+const sidenavbar = document.getElementById('sidenavbar-main');
 let body = document.getElementsByTagName('body')[0];
-let className = 'g-sidenav-pinned';
+let className = 'g-sidenavbar-pinned';
 
-if (iconNavbarSidenav) {
-  iconNavbarSidenav.addEventListener("click", toggleSidenav);
+if (iconsidestbarsidenavbar) {
+  iconsidestbarsidenavbar.addEventListener("click", togglesidenavbar);
 }
 
-if (iconSidenav) {
-  iconSidenav.addEventListener("click", toggleSidenav);
+if (iconsidenavbar) {
+  iconsidenavbar.addEventListener("click", togglesidenavbar);
 }
 
-function toggleSidenav() {
+function togglesidenavbar() {
   if (body.classList.contains(className)) {
     body.classList.remove(className);
     setTimeout(function() {
-      sidenav.classList.remove('bg-white');
+      sidenavbar.classList.remove('bg-white');
     }, 100);
-    sidenav.classList.remove('bg-transparent');
+    sidenavbar.classList.remove('bg-transparent');
 
   } else {
     body.classList.add(className);
-    sidenav.classList.add('bg-white');
-    sidenav.classList.remove('bg-transparent');
-    iconSidenav.classList.remove('d-none');
+    sidenavbar.classList.add('bg-white');
+    sidenavbar.classList.remove('bg-transparent');
+    iconsidenavbar.classList.remove('d-none');
   }
 }
 
 let html = document.getElementsByTagName('html')[0];
 
 html.addEventListener("click", function(e) {
-  if (body.classList.contains('g-sidenav-pinned') && !e.target.classList.contains('sidenav-toggler-line')) {
+  if (body.classList.contains('g-sidenavbar-pinned') && !e.target.classList.contains('sidenavbar-toggler-line')) {
     body.classList.remove(className);
   }
 });
 
-// Resize navbar color depends on configurator active type of sidenav
+// Resize sidestbar color depends on configurator active type of sidenavbar
 
 let referenceButtons = document.querySelector('[data-class]');
 
-window.addEventListener("resize", navbarColorOnResize);
+window.addEventListener("resize", sidestbarColorOnResize);
 
-function navbarColorOnResize() {
+function sidestbarColorOnResize() {
   if (window.innerWidth > 1200) {
     if (referenceButtons.classList.contains('active') && referenceButtons.getAttribute('data-class') === 'bg-transparent') {
-      sidenav.classList.remove('bg-white');
+      sidenavbar.classList.remove('bg-white');
     } else {
       if (!body.classList.contains('dark-version')) {
-        sidenav.classList.add('bg-white');
+        sidenavbar.classList.add('bg-white');
       }
     }
   } else {
-    sidenav.classList.add('bg-white');
-    sidenav.classList.remove('bg-transparent');
+    sidenavbar.classList.add('bg-white');
+    sidenavbar.classList.remove('bg-transparent');
   }
 }
 
-// Deactivate sidenav type buttons on resize and small screens
-window.addEventListener("resize", sidenavTypeOnResize);
-window.addEventListener("load", sidenavTypeOnResize);
+// Deactivate sidenavbar type buttons on resize and small screens
+window.addEventListener("resize", sidenavbarTypeOnResize);
+window.addEventListener("load", sidenavbarTypeOnResize);
 
-function sidenavTypeOnResize() {
+function sidenavbarTypeOnResize() {
   let elements = document.querySelectorAll('[onclick="sidebarType(this)"]');
   if (window.innerWidth < 1200) {
     elements.forEach(function(el) {
@@ -561,9 +561,9 @@ function getEventTarget(e) {
 // Light Mode / Dark Mode
 function darkMode(el) {
   const body = document.getElementsByTagName('body')[0];
-  const hr = document.querySelectorAll('div:not(.sidenav) > hr');
-  const sidebar = document.querySelector('.sidenav');
-  const sidebarWhite = document.querySelectorAll('.sidenav.bg-white');
+  const hr = document.querySelectorAll('div:not(.sidenavbar) > hr');
+  const sidebar = document.querySelector('.sidenavbar');
+  const sidebarWhite = document.querySelectorAll('.sidenavbar.bg-white');
   const hr_card = document.querySelectorAll('div:not(.bg-gradient-dark) hr');
   const text_btn = document.querySelectorAll('button:not(.btn) > .text-dark');
   const text_span = document.querySelectorAll('span.text-dark, .breadcrumb .text-dark');
@@ -579,18 +579,18 @@ function darkMode(el) {
   const card_border = document.querySelectorAll('.card.border');
   const card_border_dark = document.querySelectorAll('.card.border.border-dark');
   const svg = document.querySelectorAll('g');
-  const navbarBrand = document.querySelector('.navbar-brand-img');
-  const navbarBrandImg = navbarBrand.src;
-  const navLinks = document.querySelectorAll('.navbar-main .nav-link, .navbar-main .breadcrumb-item, .navbar-main .breadcrumb-item a, .navbar-main h6');
+  const sidestbarBrand = document.querySelector('.sidestbar-brand-img');
+  const sidestbarBrandImg = sidestbarBrand.src;
+  const navLinks = document.querySelectorAll('.sidestbar-main .nav-link, .sidestbar-main .breadcrumb-item, .sidestbar-main .breadcrumb-item a, .sidestbar-main h6');
   const cardNavLinksIcons = document.querySelectorAll('.card .nav .nav-link i');
   const cardNavSpan = document.querySelectorAll('.card .nav .nav-link span');
 
 
   if (!el.getAttribute("checked")) {
     body.classList.add('dark-version');
-    if (navbarBrandImg.includes('logo-ct-dark.png')) {
-      var navbarBrandImgNew = navbarBrandImg.replace("logo-ct-dark", "logo-ct");
-      navbarBrand.src = navbarBrandImgNew;
+    if (sidestbarBrandImg.includes('logo-ct-dark.png')) {
+      var sidestbarBrandImgNew = sidestbarBrandImg.replace("logo-ct-dark", "logo-ct");
+      sidestbarBrand.src = sidestbarBrandImgNew;
     }
     for (var i = 0; i < cardNavLinksIcons.length; i++) {
       if (cardNavLinksIcons[i].classList.contains('text-dark')) {
@@ -671,9 +671,9 @@ function darkMode(el) {
   } else {
     body.classList.remove('dark-version');
     sidebar.classList.add('bg-white');
-    if (navbarBrandImg.includes('logo-ct.png')) {
-      var navbarBrandImgNew = navbarBrandImg.replace("logo-ct", "logo-ct-dark");
-      navbarBrand.src = navbarBrandImgNew;
+    if (sidestbarBrandImg.includes('logo-ct.png')) {
+      var sidestbarBrandImgNew = sidestbarBrandImg.replace("logo-ct", "logo-ct-dark");
+      sidestbarBrand.src = sidestbarBrandImgNew;
     }
     for (var i = 0; i < navLinks.length; i++) {
       if (navLinks[i].classList.contains('text-dark')) {
@@ -711,7 +711,7 @@ function darkMode(el) {
       }
     }
     for (var i = 0; i < text_span_white.length; i++) {
-      if (text_span_white[i].classList.contains('text-white') && !text_span_white[i].closest('.sidenav') && !text_span_white[i].closest('.card.bg-gradient-dark')) {
+      if (text_span_white[i].classList.contains('text-white') && !text_span_white[i].closest('.sidenavbar') && !text_span_white[i].closest('.card.bg-gradient-dark')) {
         text_span_white[i].classList.remove('text-white');
         text_span_white[i].classList.add('text-dark');
       }

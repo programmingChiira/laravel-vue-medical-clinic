@@ -1,43 +1,43 @@
-// Navbar
+// sidestbar
 //
-// Provide a static navbar from which we expand to create full-width, fixed, and
-// other navbar variations.
+// Provide a static sidestbar from which we expand to create full-width, fixed, and
+// other sidestbar variations.
 
-.navbar {
-  // scss-docs-start navbar-css-vars
-  --#{$prefix}navbar-padding-x: #{if($navbar-padding-x == null, 0, $navbar-padding-x)};
-  --#{$prefix}navbar-padding-y: #{$navbar-padding-y};
-  --#{$prefix}navbar-color: #{$navbar-light-color};
-  --#{$prefix}navbar-hover-color: #{$navbar-light-hover-color};
-  --#{$prefix}navbar-disabled-color: #{$navbar-light-disabled-color};
-  --#{$prefix}navbar-active-color: #{$navbar-light-active-color};
-  --#{$prefix}navbar-brand-padding-y: #{$navbar-brand-padding-y};
-  --#{$prefix}navbar-brand-margin-end: #{$navbar-brand-margin-end};
-  --#{$prefix}navbar-brand-font-size: #{$navbar-brand-font-size};
-  --#{$prefix}navbar-brand-color: #{$navbar-light-brand-color};
-  --#{$prefix}navbar-brand-hover-color: #{$navbar-light-brand-hover-color};
-  --#{$prefix}navbar-nav-link-padding-x: #{$navbar-nav-link-padding-x};
-  --#{$prefix}navbar-toggler-padding-y: #{$navbar-toggler-padding-y};
-  --#{$prefix}navbar-toggler-padding-x: #{$navbar-toggler-padding-x};
-  --#{$prefix}navbar-toggler-font-size: #{$navbar-toggler-font-size};
-  --#{$prefix}navbar-toggler-icon-bg: #{escape-svg($navbar-light-toggler-icon-bg)};
-  --#{$prefix}navbar-toggler-border-color: #{$navbar-light-toggler-border-color};
-  --#{$prefix}navbar-toggler-border-radius: #{$navbar-toggler-border-radius};
-  --#{$prefix}navbar-toggler-focus-width: #{$navbar-toggler-focus-width};
-  --#{$prefix}navbar-toggler-transition: #{$navbar-toggler-transition};
-  // scss-docs-end navbar-css-vars
+.sidestbar {
+  // scss-docs-start sidestbar-css-vars
+  --#{$prefix}sidestbar-padding-x: #{if($sidestbar-padding-x == null, 0, $sidestbar-padding-x)};
+  --#{$prefix}sidestbar-padding-y: #{$sidestbar-padding-y};
+  --#{$prefix}sidestbar-color: #{$sidestbar-light-color};
+  --#{$prefix}sidestbar-hover-color: #{$sidestbar-light-hover-color};
+  --#{$prefix}sidestbar-disabled-color: #{$sidestbar-light-disabled-color};
+  --#{$prefix}sidestbar-active-color: #{$sidestbar-light-active-color};
+  --#{$prefix}sidestbar-brand-padding-y: #{$sidestbar-brand-padding-y};
+  --#{$prefix}sidestbar-brand-margin-end: #{$sidestbar-brand-margin-end};
+  --#{$prefix}sidestbar-brand-font-size: #{$sidestbar-brand-font-size};
+  --#{$prefix}sidestbar-brand-color: #{$sidestbar-light-brand-color};
+  --#{$prefix}sidestbar-brand-hover-color: #{$sidestbar-light-brand-hover-color};
+  --#{$prefix}sidestbar-nav-link-padding-x: #{$sidestbar-nav-link-padding-x};
+  --#{$prefix}sidestbar-toggler-padding-y: #{$sidestbar-toggler-padding-y};
+  --#{$prefix}sidestbar-toggler-padding-x: #{$sidestbar-toggler-padding-x};
+  --#{$prefix}sidestbar-toggler-font-size: #{$sidestbar-toggler-font-size};
+  --#{$prefix}sidestbar-toggler-icon-bg: #{escape-svg($sidestbar-light-toggler-icon-bg)};
+  --#{$prefix}sidestbar-toggler-border-color: #{$sidestbar-light-toggler-border-color};
+  --#{$prefix}sidestbar-toggler-border-radius: #{$sidestbar-toggler-border-radius};
+  --#{$prefix}sidestbar-toggler-focus-width: #{$sidestbar-toggler-focus-width};
+  --#{$prefix}sidestbar-toggler-transition: #{$sidestbar-toggler-transition};
+  // scss-docs-end sidestbar-css-vars
 
   position: relative;
   display: flex;
   flex-wrap: wrap; // allow us to do the line break for collapsing content
   align-items: center;
   justify-content: space-between; // space out brand from logo
-  padding: var(--#{$prefix}navbar-padding-y) var(--#{$prefix}navbar-padding-x);
+  padding: var(--#{$prefix}sidestbar-padding-y) var(--#{$prefix}sidestbar-padding-x);
   @include gradient-bg();
 
   // Because flex properties aren't inherited, we need to redeclare these first
   // few properties so that content nested within behave properly.
-  // The `flex-wrap` property is inherited to simplify the expanded navbars
+  // The `flex-wrap` property is inherited to simplify the expanded sidestbars
   %container-flex-properties {
     display: flex;
     flex-wrap: inherit;
@@ -58,49 +58,49 @@
 }
 
 
-// Navbar brand
+// sidestbar brand
 //
 // Used for brand, project, or site names.
 
-.navbar-brand {
-  padding-top: var(--#{$prefix}navbar-brand-padding-y);
-  padding-bottom: var(--#{$prefix}navbar-brand-padding-y);
-  margin-right: var(--#{$prefix}navbar-brand-margin-end);
-  @include font-size(var(--#{$prefix}navbar-brand-font-size));
-  color: var(--#{$prefix}navbar-brand-color);
+.sidestbar-brand {
+  padding-top: var(--#{$prefix}sidestbar-brand-padding-y);
+  padding-bottom: var(--#{$prefix}sidestbar-brand-padding-y);
+  margin-right: var(--#{$prefix}sidestbar-brand-margin-end);
+  @include font-size(var(--#{$prefix}sidestbar-brand-font-size));
+  color: var(--#{$prefix}sidestbar-brand-color);
   text-decoration: if($link-decoration == none, null, none);
   white-space: nowrap;
 
   &:hover,
   &:focus {
-    color: var(--#{$prefix}navbar-brand-hover-color);
+    color: var(--#{$prefix}sidestbar-brand-hover-color);
     text-decoration: if($link-hover-decoration == underline, none, null);
   }
 }
 
 
-// Navbar nav
+// sidestbar nav
 //
-// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
+// Custom sidestbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
 
-.navbar-nav {
-  // scss-docs-start navbar-nav-css-vars
+.sidestbar-nav {
+  // scss-docs-start sidestbar-nav-css-vars
   --#{$prefix}nav-link-padding-x: 0;
   --#{$prefix}nav-link-padding-y: #{$nav-link-padding-y};
-  --#{$prefix}nav-link-color: var(--#{$prefix}navbar-color);
-  --#{$prefix}nav-link-hover-color: var(--#{$prefix}navbar-hover-color);
-  --#{$prefix}nav-link-disabled-color: var(--#{$prefix}navbar-disabled-color);
-  // scss-docs-end navbar-nav-css-vars
+  --#{$prefix}nav-link-color: var(--#{$prefix}sidestbar-color);
+  --#{$prefix}nav-link-hover-color: var(--#{$prefix}sidestbar-hover-color);
+  --#{$prefix}nav-link-disabled-color: var(--#{$prefix}sidestbar-disabled-color);
+  // scss-docs-end sidestbar-nav-css-vars
 
   display: flex;
-  flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+  flex-direction: column; // cannot use `inherit` to get the `.sidestbar`s value
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 
   .show > .nav-link,
   .nav-link.active {
-    color: var(--#{$prefix}navbar-active-color);
+    color: var(--#{$prefix}sidestbar-active-color);
   }
 
   .dropdown-menu {
@@ -109,49 +109,49 @@
 }
 
 
-// Navbar text
+// sidestbar text
 //
 //
 
-.navbar-text {
+.sidestbar-text {
   padding-top: $nav-link-padding-y;
   padding-bottom: $nav-link-padding-y;
-  color: var(--#{$prefix}navbar-color);
+  color: var(--#{$prefix}sidestbar-color);
 
   a,
   a:hover,
   a:focus  {
-    color: var(--#{$prefix}navbar-active-color);
+    color: var(--#{$prefix}sidestbar-active-color);
   }
 }
 
 
-// Responsive navbar
+// Responsive sidestbar
 //
-// Custom styles for responsive collapsing and toggling of navbar contents.
+// Custom styles for responsive collapsing and toggling of sidestbar contents.
 // Powered by the collapse Bootstrap JavaScript plugin.
 
-// When collapsed, prevent the toggleable navbar contents from appearing in
+// When collapsed, prevent the toggleable sidestbar contents from appearing in
 // the default flexbox row orientation. Requires the use of `flex-wrap: wrap`
-// on the `.navbar` parent.
-.navbar-collapse {
+// on the `.sidestbar` parent.
+.sidestbar-collapse {
   flex-basis: 100%;
   flex-grow: 1;
-  // For always expanded or extra full navbars, ensure content aligns itself
+  // For always expanded or extra full sidestbars, ensure content aligns itself
   // properly vertically. Can be easily overridden with flex utilities.
   align-items: center;
 }
 
-// Button for toggling the navbar when in its collapsed state
-.navbar-toggler {
-  padding: var(--#{$prefix}navbar-toggler-padding-y) var(--#{$prefix}navbar-toggler-padding-x);
-  @include font-size(var(--#{$prefix}navbar-toggler-font-size));
+// Button for toggling the sidestbar when in its collapsed state
+.sidestbar-toggler {
+  padding: var(--#{$prefix}sidestbar-toggler-padding-y) var(--#{$prefix}sidestbar-toggler-padding-x);
+  @include font-size(var(--#{$prefix}sidestbar-toggler-font-size));
   line-height: 1;
-  color: var(--#{$prefix}navbar-color);
+  color: var(--#{$prefix}sidestbar-color);
   background-color: transparent; // remove default button style
-  border: var(--#{$prefix}border-width) solid var(--#{$prefix}navbar-toggler-border-color); // remove default button style
-  @include border-radius(var(--#{$prefix}navbar-toggler-border-radius));
-  @include transition(var(--#{$prefix}navbar-toggler-transition));
+  border: var(--#{$prefix}border-width) solid var(--#{$prefix}sidestbar-toggler-border-color); // remove default button style
+  @include border-radius(var(--#{$prefix}sidestbar-toggler-border-radius));
+  @include transition(var(--#{$prefix}sidestbar-toggler-transition));
 
   &:hover {
     text-decoration: none;
@@ -160,32 +160,32 @@
   &:focus {
     text-decoration: none;
     outline: 0;
-    box-shadow: 0 0 0 var(--#{$prefix}navbar-toggler-focus-width);
+    box-shadow: 0 0 0 var(--#{$prefix}sidestbar-toggler-focus-width);
   }
 }
 
 // Keep as a separate element so folks can easily override it with another icon
 // or image file as needed.
-.navbar-toggler-icon {
+.sidestbar-toggler-icon {
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
   vertical-align: middle;
-  background-image: var(--#{$prefix}navbar-toggler-icon-bg);
+  background-image: var(--#{$prefix}sidestbar-toggler-icon-bg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
 }
 
-.navbar-nav-scroll {
+.sidestbar-nav-scroll {
   max-height: var(--#{$prefix}scroll-height, 75vh);
   overflow-y: auto;
 }
 
-// scss-docs-start navbar-expand-loop
-// Generate series of `.navbar-expand-*` responsive classes for configuring
-// where your navbar collapses.
-.navbar-expand {
+// scss-docs-start sidestbar-expand-loop
+// Generate series of `.sidestbar-expand-*` responsive classes for configuring
+// where your sidestbar collapses.
+.sidestbar-expand {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $next: breakpoint-next($breakpoint, $grid-breakpoints);
     $infix: breakpoint-infix($next, $grid-breakpoints);
@@ -196,7 +196,7 @@
         flex-wrap: nowrap;
         justify-content: flex-start;
 
-        .navbar-nav {
+        .sidestbar-nav {
           flex-direction: row;
 
           .dropdown-menu {
@@ -204,21 +204,21 @@
           }
 
           .nav-link {
-            padding-right: var(--#{$prefix}navbar-nav-link-padding-x);
-            padding-left: var(--#{$prefix}navbar-nav-link-padding-x);
+            padding-right: var(--#{$prefix}sidestbar-nav-link-padding-x);
+            padding-left: var(--#{$prefix}sidestbar-nav-link-padding-x);
           }
         }
 
-        .navbar-nav-scroll {
+        .sidestbar-nav-scroll {
           overflow: visible;
         }
 
-        .navbar-collapse {
+        .sidestbar-collapse {
           display: flex !important; // stylelint-disable-line declaration-no-important
           flex-basis: auto;
         }
 
-        .navbar-toggler {
+        .sidestbar-toggler {
           display: none;
         }
 
@@ -252,23 +252,23 @@
     }
   }
 }
-// scss-docs-end navbar-expand-loop
+// scss-docs-end sidestbar-expand-loop
 
-// Navbar themes
+// sidestbar themes
 //
-// Styles for switching between navbars with light or dark background.
+// Styles for switching between sidestbars with light or dark background.
 
-.navbar-light {
-  @include deprecate("`.navbar-light`", "v5.2.0", "v6.0.0", true);
+.sidestbar-light {
+  @include deprecate("`.sidestbar-light`", "v5.2.0", "v6.0.0", true);
 }
 
-.navbar-dark {
-  --#{$prefix}navbar-color: #{$navbar-dark-color};
-  --#{$prefix}navbar-hover-color: #{$navbar-dark-hover-color};
-  --#{$prefix}navbar-disabled-color: #{$navbar-dark-disabled-color};
-  --#{$prefix}navbar-active-color: #{$navbar-dark-active-color};
-  --#{$prefix}navbar-brand-color: #{$navbar-dark-brand-color};
-  --#{$prefix}navbar-brand-hover-color: #{$navbar-dark-brand-hover-color};
-  --#{$prefix}navbar-toggler-border-color: #{$navbar-dark-toggler-border-color};
-  --#{$prefix}navbar-toggler-icon-bg: #{escape-svg($navbar-dark-toggler-icon-bg)};
+.sidestbar-dark {
+  --#{$prefix}sidestbar-color: #{$sidestbar-dark-color};
+  --#{$prefix}sidestbar-hover-color: #{$sidestbar-dark-hover-color};
+  --#{$prefix}sidestbar-disabled-color: #{$sidestbar-dark-disabled-color};
+  --#{$prefix}sidestbar-active-color: #{$sidestbar-dark-active-color};
+  --#{$prefix}sidestbar-brand-color: #{$sidestbar-dark-brand-color};
+  --#{$prefix}sidestbar-brand-hover-color: #{$sidestbar-dark-brand-hover-color};
+  --#{$prefix}sidestbar-toggler-border-color: #{$sidestbar-dark-toggler-border-color};
+  --#{$prefix}sidestbar-toggler-icon-bg: #{escape-svg($sidestbar-dark-toggler-icon-bg)};
 }

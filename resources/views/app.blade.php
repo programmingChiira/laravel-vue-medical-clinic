@@ -74,6 +74,7 @@
 <script src="argon/assets/js/plugins/perfect-scrollbar.min.js"></script>
 <script src="argon/assets/js/plugins/smooth-scrollbar.min.js"></script>
 <script src="argon/assets/js/plugins/chartjs.min.js"></script>
+
 <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
 
@@ -159,11 +160,11 @@
 </script>
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
+    if (win && document.querySelector('#sidenavbar-scrollbar')) {
         var options = {
             damping: '0.5'
         }
-        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        Scrollbar.init(document.querySelector('#sidenavbar-scrollbar'), options);
     }
 </script>
 <!-- Github buttons -->

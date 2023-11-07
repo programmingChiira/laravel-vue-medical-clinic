@@ -1,26 +1,26 @@
 //
-// Vertical navbar + Sidenav
+// Vertical sidestbar + sidenavbar
 //
 
 @use "sass:math";
 
-.navbar-vertical {
-  .navbar-brand > img,
-  .navbar-brand-img {
+.sidestbar-vertical {
+  .sidestbar-brand > img,
+  .sidestbar-brand-img {
     max-width: 100%;
     max-height: 2rem;
   }
-  // Navbar navigaton
-  .navbar-nav {
-    // Navbar link
+  // sidestbar navigaton
+  .sidestbar-nav {
+    // sidestbar link
     .nav-link {
-      padding-left: $navbar-padding-x;
-      padding-right: $navbar-padding-x;
-      font-weight: $navbar-nav-link-font-weight;
+      padding-left: $sidestbar-padding-x;
+      padding-right: $sidestbar-padding-x;
+      font-weight: $sidestbar-nav-link-font-weight;
       color: $font-color;
       // Icon
       > i {
-        min-width: $navbar-icon-min-width;
+        min-width: $sidestbar-icon-min-width;
         font-size: 0.9375rem;
         line-height: ($font-size-base * $line-height-base);
       }
@@ -43,22 +43,22 @@
       }
     }
   }
-  // Navbar navigation
-  .navbar-nav .nav-link {
+  // sidestbar navigation
+  .sidestbar-nav .nav-link {
     display: flex;
     align-items: center;
     white-space: nowrap;
   }
-  // Navbar heading
-  .navbar-heading {
+  // sidestbar heading
+  .sidestbar-heading {
     padding-top: $nav-link-padding-y;
     padding-bottom: $nav-link-padding-y;
     font-size: $font-size-xs;
     text-transform: uppercase;
     letter-spacing: 0.04em;
   }
-  // Expanded navbar specific styles
-  &.navbar-expand {
+  // Expanded sidestbar specific styles
+  &.sidestbar-expand {
     @each $breakpoint, $dimension in $grid-breakpoints {
       &-#{$breakpoint} {
         @include media-breakpoint-up(#{$breakpoint}) {
@@ -67,16 +67,16 @@
           top: 0;
           bottom: 0;
           width: 100%;
-          max-width: $navbar-vertical-open-width !important;
+          max-width: $sidestbar-vertical-open-width !important;
           overflow-y: auto;
           padding: 0;
           box-shadow: none;
           z-index: 9999;
 
-          .navbar-collapse {
+          .sidestbar-collapse {
             display: block;
             overflow: auto;
-            height: $navbar-vertical-inner;
+            height: $sidestbar-vertical-inner;
           }
           // Container
           > [class*="container"] {
@@ -90,33 +90,33 @@
               height: 100%;
             }
           }
-          // Fixes the vertical navbar to the left
+          // Fixes the vertical sidestbar to the left
           &.fixed-start {
             left: 0;
           }
-          // Fixed the vertical navbar to the right
+          // Fixed the vertical sidestbar to the right
           &.fixed-end {
             right: 0;
           }
-          // Navbar navigation
-          .navbar-nav .nav-link {
-            padding-top: $navbar-vertical-nav-link-padding-y;
-            padding-bottom: $navbar-vertical-nav-link-padding-y;
-            margin: 0 $navbar-vertical-nav-link-padding-x;
+          // sidestbar navigation
+          .sidestbar-nav .nav-link {
+            padding-top: $sidestbar-vertical-nav-link-padding-y;
+            padding-bottom: $sidestbar-vertical-nav-link-padding-y;
+            margin: 0 $sidestbar-vertical-nav-link-padding-x;
 
             .nav-link-text,
-            .sidenav-mini-icon,
-            .sidenav-normal,
+            .sidenavbar-mini-icon,
+            .sidenavbar-normal,
             i {
               pointer-events: none;
             }
           }
 
-          .navbar-nav .nav-item {
+          .sidestbar-nav .nav-item {
             width: 100%;
           }
 
-          .navbar-nav > .nav-item {
+          .sidestbar-nav > .nav-item {
             margin-top: 0.125rem;
 
             .icon {
@@ -151,12 +151,12 @@
             border-radius: $border-radius-sm;
           }
           // Second level
-          .navbar-nav .nav .nav-link {
-            padding-top: calc($navbar-vertical-nav-link-padding-y / 1.5);
-            padding-bottom: calc($navbar-vertical-nav-link-padding-y / 1.5);
+          .sidestbar-nav .nav .nav-link {
+            padding-top: calc($sidestbar-vertical-nav-link-padding-y / 1.5);
+            padding-bottom: calc($sidestbar-vertical-nav-link-padding-y / 1.5);
             padding-left: 15px;
 
-            > span.sidenav-normal {
+            > span.sidenavbar-normal {
               transition: all 0.1s ease 0s;
             }
           }
@@ -166,11 +166,11 @@
   }
 }
 
-.sidenav {
+.sidenavbar {
   // Define colors
   @each $color, $value in $theme-colors {
     &[data-color="#{$color}"] {
-      .navbar-nav > .nav-item > .nav-link.active {
+      .sidestbar-nav > .nav-item > .nav-link.active {
         @include gradient-directional(nth(#{$value}, 1) 0%, nth(#{$value}, -1) 100%, $deg: 310deg);
 
         .icon i,
@@ -185,71 +185,71 @@
     }
   }
 }
-// Sidenav + Main content transition
+// sidenavbar + Main content transition
 
 .main-content,
-.sidenav {
+.sidenavbar {
   transition: $transition-base;
 }
 //
-// Sidenav
+// sidenavbar
 //
 
-.sidenav {
+.sidenavbar {
   z-index: 999;
 
-  .navbar-brand,
-  .navbar-heading {
+  .sidestbar-brand,
+  .sidestbar-heading {
     display: block;
   }
   @include media-breakpoint-up(xl) {
     &:hover {
-      max-width: $navbar-vertical-open-width;
+      max-width: $sidestbar-vertical-open-width;
     }
 
-    .sidenav-toggler {
+    .sidenavbar-toggler {
       padding: 1.5rem;
     }
 
     &.fixed-start + .main-content {
-      margin-left: $navbar-vertical-open-width + 1.5;
+      margin-left: $sidestbar-vertical-open-width + 1.5;
     }
 
     &.fixed-end + .main-content {
-      margin-right: $navbar-vertical-open-width + 1.5;
+      margin-right: $sidestbar-vertical-open-width + 1.5;
     }
   }
 
-  .navbar-heading .docs-mini {
+  .sidestbar-heading .docs-mini {
     padding-left: 3px;
   }
 
-  .navbar-heading {
+  .sidestbar-heading {
     transition: all 0.1s ease;
   }
 
-  .navbar-brand {
+  .sidestbar-brand {
     padding: 1.5rem 2rem;
   }
 }
 
-.sidenav-header {
-  height: $sidenav-header-width;
+.sidenavbar-header {
+  height: $sidenavbar-header-width;
 }
 
-.sidenav-footer {
+.sidenavbar-footer {
   .card {
     &.card-background {
       &:after {
-        opacity: $sidenav-card-opacity;
+        opacity: $sidenavbar-card-opacity;
       }
     }
   }
 }
-// Sidenav states
+// sidenavbar states
 
-.g-sidenav-show {
-  .sidenav {
+.g-sidenavbar-show {
+  .sidenavbar {
     .nav-item .collapse {
       height: auto;
       @include transition($transition-base);
@@ -263,38 +263,38 @@
 }
 // Media fixes for iPhone 5 like resolutions
 @include media-breakpoint-down(xl) {
-  .g-sidenav-show {
+  .g-sidenavbar-show {
     &.rtl {
-      .sidenav {
-        transform: translateX($navbar-vertical-open-width + 1.5);
+      .sidenavbar {
+        transform: translateX($sidestbar-vertical-open-width + 1.5);
       }
     }
 
     &:not(.rtl) {
-      .sidenav {
-        transform: translateX(-($navbar-vertical-open-width + 1.5));
+      .sidenavbar {
+        transform: translateX(-($sidestbar-vertical-open-width + 1.5));
       }
     }
 
-    .sidenav {
+    .sidenavbar {
       &.fixed-start+.main-content {
         margin-left: 0 !important;
       }
     }
 
-    &.g-sidenav-pinned {
-      .sidenav {
+    &.g-sidenavbar-pinned {
+      .sidenavbar {
         transform: translateX(0);
       }
     }
   }
 }
 
-.navbar-vertical {
+.sidestbar-vertical {
   &.bg-white {
     box-shadow: $card-box-shadow;
 
-    .navbar-nav {
+    .sidestbar-nav {
       > .nav-item {
         .nav-link {
           &.active {
@@ -306,32 +306,32 @@
     }
   }
 
-  .navbar-nav .nav-link.active {
+  .sidestbar-nav .nav-link.active {
     font-weight: $font-weight-bold;
     box-shadow: $card-box-shadow;
     border-radius: $border-radius-md;
   }
 
-  .navbar-nav > .nav-item .nav-link.active {
+  .sidestbar-nav > .nav-item .nav-link.active {
     color: $dark;
     background-color: $dark-sidebar-nav-active-bg;
   }
 }
 
-.navbar-main {
+.sidestbar-main {
   transition: box-shadow $transition-base-time ease-in, background-color $transition-base-time ease-in;
 
   &.fixed-top {
-    width: calc(100% - (#{$navbar-vertical-open-width} + #{$spacer * 1.5} * 3));
+    width: calc(100% - (#{$sidestbar-vertical-open-width} + #{$spacer * 1.5} * 3));
   }
 
   &.fixed-top + [class*="container"] {
     margin-top: 7.1875rem !important;
   }
 }
-// Navbar Vertical Extend
-.navbar-vertical {
-  .navbar-nav .nav-link[data-bs-toggle="collapse"] {
+// sidestbar Vertical Extend
+.sidestbar-vertical {
+  .sidestbar-nav .nav-link[data-bs-toggle="collapse"] {
     &:after {
       display: inline-block;
       font-style: normal;
@@ -354,7 +354,7 @@
     }
   }
 
-  .navbar-nav {
+  .sidestbar-nav {
     .nav-item {
       .collapse,
       .collapsing {
@@ -367,7 +367,7 @@
               background-color: transparent;
               box-shadow: none;
               color: rgba($dark-gradient-state,0.5);
-              margin-left: $navbar-vertical-collapse-margin-left;
+              margin-left: $sidestbar-vertical-collapse-margin-left;
               
               &.active {
                 color: $dark-gradient-state;
@@ -394,7 +394,7 @@
   }
 
   &.blur {
-    .navbar-nav > .nav-item {
+    .sidestbar-nav > .nav-item {
       .nav-link {
         background-color: transparent;
         box-shadow: none;
@@ -402,10 +402,10 @@
     }
   }
 }
-// Styles for minimized sidenav
-.navbar-vertical {
-  .navbar-brand {
-    .navbar-brand-img,
+// Styles for minimized sidenavbar
+.sidestbar-vertical {
+  .sidestbar-brand {
+    .sidestbar-brand-img,
     span {
       @include transition($transition-base);
     }
@@ -413,7 +413,7 @@
 
   .nav-item {
     .nav-link {
-      span.sidenav-mini-icon {
+      span.sidenavbar-mini-icon {
         @include transition($transition-base);
         text-align: center;
         width: 0;
@@ -426,7 +426,7 @@
   }
 
   &.bg-default {
-    .navbar-nav {
+    .sidestbar-nav {
       .nav-item {
         .nav-link {
           color: $white;
@@ -459,12 +459,12 @@
         }
       }
     }
-    .sidenav-header {
-      .navbar-brand {
+    .sidenavbar-header {
+      .sidestbar-brand {
         color: $white;
       }
     }
-    .sidenav-footer {
+    .sidenavbar-footer {
       h6 {
         color: $white;
       }
@@ -475,11 +475,11 @@
   }
 }
 
-.g-sidenav-show:not(.g-sidenav-hidden) {
-  .navbar-vertical {
+.g-sidenavbar-show:not(.g-sidenavbar-hidden) {
+  .sidestbar-vertical {
     .nav-item {
       .nav-link {
-        span.sidenav-mini-icon {
+        span.sidenavbar-mini-icon {
           opacity: 0;
         }
       }
@@ -487,40 +487,40 @@
   }
 }
 
-.g-sidenav-hidden {
-  .sidenav-footer {
+.g-sidenavbar-hidden {
+  .sidenavbar-footer {
     display: none;
   }
 }
 
 @include media-breakpoint-up(xl) {
-  .g-sidenav-hidden {
+  .g-sidenavbar-hidden {
     &.rtl .main-content {
-      margin-right: $navbar-vertical-hidden-width !important;
+      margin-right: $sidestbar-vertical-hidden-width !important;
 
-      .navbar-vertical {
+      .sidestbar-vertical {
         &:hover {
-          max-width: $navbar-vertical-open-width !important;
+          max-width: $sidestbar-vertical-open-width !important;
         }
       }
     }
 
     &.rtl {
-      .sidenav:hover {
+      .sidenavbar:hover {
         & + .main-content {
-          margin-right: $navbar-vertical-open-width + 1.5 !important;
+          margin-right: $sidestbar-vertical-open-width + 1.5 !important;
         }
       }
     }
 
-    .navbar-vertical {
-      max-width: $navbar-vertical-hidden-width !important;
+    .sidestbar-vertical {
+      max-width: $sidestbar-vertical-hidden-width !important;
 
       &.fixed-start + .main-content {
-        margin-left: $navbar-vertical-hidden-width + 1.5;
+        margin-left: $sidestbar-vertical-hidden-width + 1.5;
       }
 
-      .navbar-brand {
+      .sidestbar-brand {
         img {
           width: auto !important;
         }
@@ -537,14 +537,14 @@
           }
 
           .nav-link-text,
-          .sidenav-normal {
+          .sidenavbar-normal {
             opacity: 0;
             width: 0;
           }
 
-          .sidenav-mini-icon {
-            min-width: $navbar-icon-min-width;
-            margin-left: $navbar-icon-margin-left;
+          .sidenavbar-mini-icon {
+            min-width: $sidestbar-icon-min-width;
+            margin-left: $sidestbar-icon-margin-left;
             opacity: 1;
           }
 
@@ -560,7 +560,7 @@
 
             .nav-item {
               .nav-link {
-                margin-left: $navbar-vertical-nav-link-padding-x;
+                margin-left: $sidestbar-vertical-nav-link-padding-x;
 
                 &:before {
                   content: none;
@@ -586,15 +586,15 @@
           height: 0;
         }
       }
-      // Hover style on sidenav minimized
+      // Hover style on sidenavbar minimized
       &:hover {
-        max-width: $navbar-vertical-open-width !important;
+        max-width: $sidestbar-vertical-open-width !important;
 
         &.fixed-start + .main-content {
-          margin-left: $navbar-vertical-open-width + 1.5;
+          margin-left: $sidestbar-vertical-open-width + 1.5;
         }
 
-        .navbar-brand {
+        .sidestbar-brand {
           span {
             opacity: 1;
           }
@@ -603,12 +603,12 @@
         .nav-item {
           .nav-link {
             .nav-link-text,
-            .sidenav-normal {
+            .sidenavbar-normal {
               opacity: 1;
               width: auto;
             }
 
-            .sidenav-mini-icon {
+            .sidenavbar-mini-icon {
               opacity: 0;
               width: 0;
               min-width: 0;
@@ -625,7 +625,7 @@
 
               .nav-item {
                 .nav-link {
-                  margin-left: $navbar-vertical-collapse-margin-left;
+                  margin-left: $sidestbar-vertical-collapse-margin-left;
 
                   &:before {
                     content: "";

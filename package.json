@@ -16,6 +16,8 @@
         "vue": "^3.2.37"
     },
     "dependencies": {
+        "chart.js": "^4.4.0",
+        "smooth-scrollbar": "^8.8.4",
         "vue-meta": "^2.4.0",
         "vue-router": "^4.2.5"
     }

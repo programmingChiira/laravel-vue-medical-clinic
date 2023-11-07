@@ -5,13 +5,13 @@
     background-color: $dark-version-bg-color !important;
   }
 
-  .sidenav {
-    background: $dark-version-sidenav-bg-color !important;
+  .sidenavbar {
+    background: $dark-version-sidenavbar-bg-color !important;
 
     &.bg-transparent {
       background: transparent !important;
 
-      .navbar-nav {
+      .sidestbar-nav {
         .nav-link {
           color: $white !important;
         }
@@ -26,7 +26,7 @@
     &.bg-white {
       background: $white !important;
 
-      .navbar-nav {
+      .sidestbar-nav {
         .nav-link {
           &.active:after {
             color: $dark-version-caret-sidebar-color;
@@ -222,8 +222,8 @@
     color: $light;
   }
 
-  .navbar-vertical {
-    .navbar-nav {
+  .sidestbar-vertical {
+    .sidestbar-nav {
       .nav-item {
         .nav-link {
           color: $white;

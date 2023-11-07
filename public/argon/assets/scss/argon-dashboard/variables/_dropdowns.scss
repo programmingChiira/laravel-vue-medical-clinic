@@ -3,8 +3,8 @@ $dropdown-transition:                      visibility .25s,opacity .25s,transfor
 $dropdown-transform-origin:                50% 0 !default;
 $dropdown-transform:                       perspective(999px) rotateX(-10deg) translateZ(0) translate3d(0px, 37px, 0px) !important !default;
 $dropdown-transform-show:                  perspective(999px) rotateX(0deg) translateZ(0) translate3d(0, 37px,5px) !important !default;
-$dropdown-animation-show:                  show-navbar-dropdown .25s ease forwards !default;
-$dropdown-animation:                       hide-navbar-dropdown .25s ease forwards !default;
+$dropdown-animation-show:                  show-sidestbar-dropdown .25s ease forwards !default;
+$dropdown-animation:                       hide-sidestbar-dropdown .25s ease forwards !default;
 
 $dropdown-multilevel-transform:            perspective(999px) rotateX(-10deg) translateZ(0) translate3d(0px, 0px, 0px) !important !default;
 $dropdown-multilevel-transform-show:       perspective(999px) rotateX(0deg) translateZ(0) translate3d(0, 0px,5px) !important !default;
