@@ -40,25 +40,13 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('../views/auth/login.vue'),
+    component: () => import('../views/authenticated/userLogin.vue'),
   },
 
   {
     path: '/register',
     name: 'register',
-    component: () => import('../views/auth/register.vue'),
-  },
-
-  {
-    path: '/adminDash',
-    name: 'adminDash',
-    component: () => import('../views/adminPortal/adminDashboard.vue'),
-  },
-
-  {
-    path: '/admin',
-    name: 'admin',
-    component: () => import('../views/adminPortal/ui/index.vue'),
+    component: () => import('../views/authenticated/userRegister.vue'),
   },
 
   {
