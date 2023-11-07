@@ -131,7 +131,7 @@ a:focus {
 
 .sub_page .hero_area {
   min-height: auto;
-  background-color: #178066;
+  background-color: #388087;
 }
 
 .sub_page .hero_area .hero_bg_box {
@@ -181,7 +181,7 @@ a:focus {
 }
 
 .custom_nav-container .nav_search-btn:hover {
-  color: #62d2a2;
+  color: #6fb3b8;
 }
 
 .custom_nav-container .navbar-toggler {
@@ -304,7 +304,7 @@ a:focus {
   display: inline-block;
   padding: 10px 15px;
   background-color: #ffffff;
-  color: #62d2a2;
+  color: #6fb3b8;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -379,7 +379,7 @@ a:focus {
   width: 90px;
   height: 90px;
   margin-bottom: 15px;
-  background-color: #62d2a2;
+  background-color: #6fb3b8;
   border-radius: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -410,7 +410,7 @@ a:focus {
 }
 
 .department_section .box .detail-box a:hover {
-  color: #62d2a2;
+  color: #6fb3b8;
 }
 
 .department_section .btn-box {
@@ -426,17 +426,17 @@ a:focus {
 .department_section .btn-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #62d2a2;
+  background-color: #6fb3b8;
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid #62d2a2;
+  border: 1px solid #6fb3b8;
 }
 
 .department_section .btn-box a:hover {
   background-color: transparent;
-  color: #62d2a2;
+  color: #6fb3b8;
 }
 
 .about_section .row {
@@ -470,22 +470,22 @@ a:focus {
 .about_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #62d2a2;
+  background-color: #6fb3b8;
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid #62d2a2;
+  border: 1px solid #6fb3b8;
   margin-top: 15px;
 }
 
 .about_section .detail-box a:hover {
   background-color: transparent;
-  color: #62d2a2;
+  color: #6fb3b8;
 }
 
 .doctor_section {
-  background: #178066;
+  background: #388087;
 }
 
 .doctor_section .heading_container {
@@ -541,7 +541,7 @@ a:focus {
 }
 
 .doctor_section .box .detail-box .social_box a {
-  color: #62d2a2;
+  color: #6fb3b8;
   margin: 0 10px;
 }
 
@@ -716,7 +716,7 @@ a:focus {
 }
 
 .client_section .box .detail-box .name h6 {
-  color: #62d2a2;
+  color: #6fb3b8;
   font-size: 20px;
 }
 
@@ -739,7 +739,7 @@ a:focus {
   background-repeat: no-repeat;
   background-size: 12px;
   background-position: center;
-  background-color: #62d2a2;
+  background-color: #6fb3b8;
   background-position: center;
   border-radius: 5px;
   margin: 0 2.5px;
@@ -755,7 +755,7 @@ a:focus {
 }
 
 .footer_section {
-  background: #178066;
+  background: #388087;
   color: #ffffff;
   padding: 60px 0 15px 0;
   position: relative;
@@ -790,7 +790,7 @@ a:focus {
 }
 
 .footer_section .footer_contact .contact_link_box a:hover {
-  color: #62d2a2;
+  color: #6fb3b8;
 }
 
 .footer_section .footer_social {
@@ -818,7 +818,7 @@ a:focus {
 }
 
 .footer_section .footer_social a:hover {
-  color: #62d2a2;
+  color: #6fb3b8;
 }
 
 .footer_section .footer_links {
@@ -842,7 +842,7 @@ a:focus {
 }
 
 .footer_section .footer_links a:hover {
-  color: #62d2a2;
+  color: #6fb3b8;
 }
 
 .footer_section form input {
@@ -877,18 +877,18 @@ a:focus {
   text-align: center;
   display: inline-block;
   padding: 10px 55px;
-  background-color: #62d2a2;
+  background-color: #6fb3b8;
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid #62d2a2;
+  border: 1px solid #6fb3b8;
   margin-top: 15px;
 }
 
 .footer_section form button:hover {
   background-color: transparent;
-  color: #62d2a2;
+  color: #6fb3b8;
 }
 
 .footer_section .footer-info {

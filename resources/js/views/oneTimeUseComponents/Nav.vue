@@ -10,7 +10,7 @@
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class=""> </span>
+          <span style="width: 30px;" class=""> </span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -35,14 +35,15 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a style="color: white;" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a style="color: white;" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-sign-in"> </i> AUTH</a>
-              <ul style="text-align: center;" class="dropdown-menu d-flex justify-content-center align-items-center">
-                <li><router-link style="color: black;" to="/login">Login</router-link></li>
-                <div class="dropdown-divider"></div>
-                <li><router-link style="color: black;" to="/register">Register</router-link></li>
-                <br/>
-              </ul>
+                <ul style="text-align: center;" class="dropdown-menu d-flex justify-content-center align-items-center">
+                  <li><router-link style="color: black;" to="/login">Login</router-link></li>
+                  <div class="dropdown-divider"></div>
+                  <li><router-link style="color: black;" to="/register">Register</router-link></li>
+                  <br/>
+                </ul>
             </li>
           </ul>
         </div>
@@ -89,5 +90,35 @@ export default {
     opacity: 1;
     visibility: visible;
   }
+}
+
+/* Additional CSS for dropdown menu */
+
+.navbar-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: none;
+  min-width: 10rem;
+}
+
+.navbar-nav .dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.navbar-nav .dropdown-menu a:hover {
+  color: #0d6efd;
+  background-color: #e9ecef;
 }
 </style>

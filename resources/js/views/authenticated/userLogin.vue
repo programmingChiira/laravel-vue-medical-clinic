@@ -1,33 +1,49 @@
 <template>
     <body>
-        <div class="container">
-            <p style="margin-top: 10px;"> <router-link to="/"> Home</router-link> | <router-link to="/appointments">
-                    Book</router-link>
-                | <router-link to="/register"> Register</router-link></p>
-            <div class="title">Login</div>
-            <div class="content">
-                <form action="#">
-                    <div class="row user-details">
-                        <div class="col-12 col-md-12 input-box">
-                            <span class="details">Phone Number</span>
-                            <input type="text" placeholder="Enter your number" required>
-                        </div>
-                        <div class="col-12 col-md-12 input-box">
-                            <span class="details">Password</span>
-                            <input type="text" placeholder="Enter your password" required>
-                        </div>
+        <div class="Main-container">
+            <div class="container-login">
+                <div class="wrap-login">
+    
+                    <div class="login-pic">
+                        <img src="img.png" alt="IMG">
                     </div>
-                    <div class="col-lg-12">
-                        <div class="form-group form-forget">
-                            <router-link to="/register" class="ml-auto">I don't have an account!</router-link>
+    
+                    <form class="login-form">
+                        <span class="login-form-title">Login</span>
+    
+                        <div class="wrap-input">
+                            <input type="text" class="input" name="email" placeholder="Email" required>
+                            <span class="focus-input"></span>
+                            <span class="symbol-input">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
                         </div>
-                    </div>
-                    <div class="button">
-                        <input type="submit" value="LOGIN">
-                    </div>
-                </form>
+                        <div class="wrap-input">
+                            <input type="password" class="input" name="pass" placeholder="Password" required>
+                            <span class="focus-input"></span>
+                            <span class="symbol-input">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                        </div>
+    
+                        <div class="login-form-btn-container">
+                            <button class="login-form-btn">Login</button>
+                        </div>
+    
+                      <div class="text-center p-t-1">
+                          <span class="txt1">Forgot</span>
+                          <a href="#" class="txt2"> Username / Password ?</a>
+                      </div>
+                      <div class="text-center p-t-2">
+                          <a href="#" class="txt2">Create Your Account <i class="fa fa-long-arrow-right " aria-hidden="true"></i></a>
+                      </div>
+    
+                    </form>
+    
+                </div>
             </div>
         </div>
+    
     </body>
 </template>
 
@@ -58,166 +74,243 @@ export default {
 </script>
 
 <style scoped>
-body {
-    height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* coding With Nick */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body, html{
+    height: 100%;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 400;
+}
+.Main-container{
+    width: 100%;
+    margin: 0 auto;
+}
+.container-login{
+    width: 100%;
+    min-height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    background: linear-gradient(135deg, #178066, #178066);
+    padding: 15px;
+    background: #9053c7;
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
-
-.container {
-    max-width: 700px;
-    width: 100%;
-    background-color: #fff;
-    padding: 25px 30px;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-}
-
-.container .title {
-    font-size: 25px;
-    font-weight: 500;
-    position: relative;
-}
-
-.container .title::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 30px;
-    border-radius: 5px;
-    background: linear-gradient(135deg, #178066, #178066);
-}
-
-.content form .user-details {
+.wrap-login{
+    width: 960px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 20px 0 12px 0;
+    padding: 177px 130px 33px 95px;
 }
-
-form .user-details .input-box {
-    margin-bottom: 15px;
-    width: calc(100% / 2 - 20px);
+.login-pic{
+    width: 316px;
 }
-
-form .input-box span.details {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
+.login-pic img{
+    max-width: 100%;
 }
-
-.user-details .input-box input {
-    height: 45px;
+.login-form{
+    width: 290px;
+}
+.login-form-title{
+    font-family: 'poppins', sans-serif;
+    font-size: 24px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: 700;
     width: 100%;
-    outline: none;
-    font-size: 16px;
-    border-radius: 5px;
-    padding-left: 15px;
-    border: 1px solid #ccc;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease;
+    display: block;
+    padding-bottom: 54px;
 }
-
-.user-details .input-box input:focus,
-.user-details .input-box input:valid {
-    border-color: #178066;
+.wrap-input{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 10px;
 }
-
-form .gender-details .gender-title {
-    font-size: 20px;
+.input{
+    font-family: 'Poppins' , sans-serif;
+    font-size: 15px;
     font-weight: 500;
+    line-height: 1.5;
+    color: #666666;
+    outline: none;
+    border: none;
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 68px;
+}
+.focus-input{
+    display: block;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 0px 0px;
+    color: rgba(87, 184,70, 0.8);
+}
+.input:focus + .focus-input{
+    animation:  anim-shadow 0.5s ease-in-out forwards;
+}
+@-webkit-keyframes anim-shadow{
+    to {
+        box-shadow:  0px 0px 70px 25px ;
+        opacity: 0;
+    }
+}
+@keyframes anim-shadow{
+    to {
+        box-shadow:  0px 0px 70px 25px ;
+        opacity: 0;
+    }
 }
 
-form .category {
-    display: flex;
-    width: 80%;
-    margin: 14px 0;
-    justify-content: space-between;
-}
-
-form .category label {
+.symbol-input{
+    font-size: 15px;
     display: flex;
     align-items: center;
-    cursor: pointer;
-}
-
-form .category label .dot {
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    margin-right: 10px;
-    background: #d9d9d9;
-    border: 5px solid transparent;
-    transition: all 0.3s ease;
-}
-
-#dot-1:checked~.category label .one,
-#dot-2:checked~.category label .two,
-#dot-3:checked~.category label .three {
-    background: #178066;
-    border-color: #d9d9d9;
-}
-
-form input[type="radio"] {
-    display: none;
-}
-
-form .button {
-    height: 45px;
-    margin: 35px 0
-}
-
-form .button input {
-    height: 100%;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    border-radius: 5px;
-    border: none;
+    height: 100%;
+    padding-left: 35px;
+    pointer-events: none;
+    color: #666666;
+    transition: all 0.4s
+}
+.input:focus + .focus-input + .symbol-input{
+    color: #57b846;
+    padding-left: 28px;
+}
+
+.login-form-btn-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.login-form-btn{
+    font-family:'poppins',sans-serif ;
+    font-size: 15px;
+    line-height: 1.5;
     color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    background: #57b846;
+    text-transform: uppercase;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px ;
+    transition: all 0.4s;
+    border: none;
+
+}
+.login-form-btn:hover{
+    background: #333333;
+}
+.text-center{
+    text-align: center;
+}
+.txt1{
+    font-family: 'poppins';
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666666;
+}
+.txt2{
+    font-family: 'poppins';
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666666;
+}
+.p-t-1{
+    padding-top: 12px;
+}
+.p-t-2{
+    padding-top: 136px;
+}
+
+a{
+    font-family: 'poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0px;
+    transition: all 0.4s;
+    text-decoration: none;
+    font-weight: 400;
+}
+a:focus{
+    outline: none !important;
+}
+a:hover{
+    color: #57b846;
+}
+button{
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+button:hover{
     cursor: pointer;
-    transition: all 0.3s ease;
-    background: linear-gradient(135deg, #178066, #178066);
 }
 
-form .button input:hover {
-    /* transform: scale(0.99); */
-    background: linear-gradient(-135deg, #178066, #178066);
+/* Responsive */
+@media (max-width: 992px){
+
+.wrap-login{
+    padding: 177px 90px 33px 85px;
 }
 
-@media(max-width: 584px) {
-    .container {
-        max-width: 100%;
+.login-pic{
+    width: 35%;
+}
+.login-form{
+    width: 50%;
+}
+
+}
+
+
+@media (max-width: 768px){
+    .wrap-login{
+        padding: 100px 80px 33px 80px;
     }
-
-    form .user-details .input-box {
-        margin-bottom: 15px;
+    
+    .login-pic{
+       display: none;
+    }
+    .login-form{
         width: 100%;
-    }
-
-    form .category {
-        width: 100%;
-    }
-
-    .content form .user-details {
-        max-height: 300px;
-        overflow-y: scroll;
-    }
-
-    .user-details::-webkit-scrollbar {
-        width: 5px;
-    }
+    } 
 }
 
-@media(max-width: 459px) {
-    .container .content .category {
-        flex-direction: column;
+
+@media (max-width: 576px){
+    .wrap-login{
+        padding: 100px 15px 33px 15px;
     }
 }
 </style>

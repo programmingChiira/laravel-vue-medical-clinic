@@ -50,6 +50,12 @@ const routes = [
   },
 
   {
+    path: '/admin',
+    name: 'admin',
+    component: () => import('../views/adminDash/index.vue'),
+  },
+
+  {
     path: '/:pathMatch(.*)*', // Catch-all route should be at the bottom
     name: 'not-found',
     component: () => import('../views/oneTimeUseComponents/NotFound.vue'),
