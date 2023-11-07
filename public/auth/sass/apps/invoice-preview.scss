@@ -1,0 +1,428 @@
+//  =================
+//      Imports
+//  =================
+
+@import '../../base/base';    // Base Variables
+
+.actions-btn-tooltip {
+  &.tooltip {
+    opacity: 1;
+    top: -11px !important;
+  }
+
+  .arrow:before {
+    border-top-color: $dark;
+  }
+
+  .tooltip-inner {
+    background: $dark;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 0px 5px 15px 1px rgba(113, 106, 202, 0.2);
+    padding: 4px 16px;
+  }
+}
+
+.invoice-container {
+  width: 100%;
+}
+
+.invoice-inbox {
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid $m-color_3;
+  box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.06);
+  border-radius: 6px;
+
+  .inv-number {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: $m-color_6;
+  }
+
+  .invoice-action svg {
+    cursor: pointer;
+    font-weight: 600;
+    color: $m-color_6;
+    margin-right: 6px;
+    vertical-align: middle;
+    fill: rgba(0, 23, 55, 0.08);
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &:hover {
+      color: $primary;
+      fill: rgba(27, 85, 226, 0.2392156863);
+    }
+  }
+}
+
+/*
+===================
+
+     Invoice
+
+===================
+*/
+
+/*    Inv head section   */
+
+.invoice .content-section .inv--head-section {
+  padding: 36px 35px;
+  margin-bottom: 40px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid $m-color_2;
+}
+
+.inv--customer-detail-section {
+  padding: 36px 35px;
+  padding-top: 0;
+}
+
+.invoice .content-section {
+  .inv--head-section {
+    h3.in-heading {
+      font-size: 18px;
+      font-weight: 600;
+      color: $m-color_10;
+      margin: 0;
+      margin-left: 12px;
+    }
+
+    .company-logo {
+      width: 36px;
+      height: 36px;
+    }
+
+    div.company-info {
+      display: flex;
+      justify-content: flex-end;
+
+      svg {
+        width: 42px;
+        height: 42px;
+        margin-right: 10px;
+        color: $primary;
+        fill: rgba(27, 85, 226, 0.2392156863);
+      }
+    }
+
+    .inv-brand-name {
+      font-size: 23px;
+      font-weight: 600;
+      margin-bottom: 0;
+      align-self: center;
+    }
+  }
+
+  .inv--detail-section {
+    .inv-to {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .inv-customer-name {
+      font-weight: 700;
+      margin-bottom: 2px;
+      font-size: 13px;
+      color: $primary;
+    }
+
+    .inv-detail-title {
+      font-weight: 700;
+      margin-bottom: 0;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .inv-details {
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .inv-street-addr, .inv-email-address {
+      font-weight: 600;
+      margin-bottom: 2px;
+      font-size: 13px;
+    }
+
+    .inv-list-number {
+      margin-bottom: 2px;
+
+      .inv-title {
+        font-weight: 400;
+        font-size: 20px;
+      }
+
+      .inv-number {
+        font-weight: 400;
+        font-size: 18px;
+        color: $primary;
+      }
+    }
+
+    .inv-created-date, .inv-due-date {
+      margin-bottom: 2px;
+
+      .inv-title {
+        font-weight: 700;
+        font-size: 13px;
+      }
+
+      .inv-date {
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .inv--product-table-section {
+    padding: 30px 0;
+
+    table {
+      margin-bottom: 0;
+    }
+
+    thead tr {
+      border: none;
+    }
+
+    th {
+      padding: 9px 22px;
+      font-size: 11px !important;
+      border: none;
+      border-top: 1px solid $m-color_3;
+      border-bottom: 1px solid $m-color_3;
+      color: $m-color_9 !important;
+
+      &:first-child {
+        padding-left: 35px;
+      }
+
+      &:last-child {
+        padding-right: 35px;
+      }
+    }
+
+    tr td {
+      &:first-child {
+        padding-left: 35px;
+      }
+
+      &:last-child {
+        padding-right: 35px;
+      }
+    }
+
+    td {
+      color: $m-color_9;
+      font-weight: 600;
+      border: none;
+      padding: 10px 25px;
+      vertical-align: top !important;
+    }
+
+    tbody tr:nth-of-type(even) td {
+      background-color: $m-color_20;
+    }
+  }
+
+  .inv--payment-info {
+    font-size: 13px;
+    font-weight: 600;
+
+    .inv-title {
+      color: $primary;
+      font-weight: 600;
+      margin-bottom: 15px;
+      width: 65%;
+      margin-left: auto;
+    }
+
+    p {
+      margin-bottom: 0;
+      display: flex;
+      width: 65%;
+      margin-left: auto;
+      justify-content: space-between;
+    }
+
+    span {
+      font-weight: 500;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .inv-subtitle {
+      font-weight: 600;
+      font-size: 13px;
+      display: inline-block;
+      white-space: normal;
+      margin-right: 4px;
+    }
+  }
+
+  .inv--total-amounts {
+    padding: 0 35px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $m-color_2;
+
+    .grand-total-title h4, .grand-total-amount h4 {
+      position: relative;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 0;
+      padding: 0;
+      color: $m-color_10;
+      display: inline-block;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+/*    Inv detail section    */
+
+/*inv-list-number*/
+
+/*inv-created-date*/
+
+/*inv-due-date*/
+
+/*    Inv product table section    */
+
+/*inv--payment-info*/
+
+/*inv--total-amounts*/
+
+/*inv--note*/
+
+.inv--note {
+  padding: 0 25px;
+  padding-bottom: 25px;
+
+  p {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: $m-color_6;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #ct {
+    visibility: visible;
+
+    * {
+      visibility: visible;
+    }
+  }
+
+  .doc-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
+
+@page {
+  size: auto;
+  margin: 0mm;
+}
+
+/*
+===============================
+    Invoice Actions Button
+===============================
+*/
+
+.invoice-actions-btn {
+  padding: 25px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: #fff;
+  border: 1px solid $m-color_3;
+  border-radius: 6px;
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: $m-color_9;
+  }
+
+  .invoice-action-btn a {
+    -webkit-transform: none;
+    transform: none;
+
+    &.btn-send, &.btn-print, &.btn-download {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &.btn-edit {
+      width: 100%;
+    }
+  }
+}
+
+/* Invoice Actions -> action-btn */
+
+@media (max-width: 1199px) {
+  .invoice-actions-btn {
+    margin-top: 25px;
+
+    .invoice-action-btn a {
+      &.btn-send, &.btn-print, &.btn-download {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .invoice-actions-btn .invoice-action-btn a {
+    &.btn-send, &.btn-print {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .invoice .content-section .inv--payment-info {
+    .inv-title {
+      margin-top: 25px;
+      margin-left: 0;
+      margin-right: auto;
+      margin-bottom: 6px;
+      width: auto;
+    }
+
+    p {
+      margin-left: 0;
+      margin-right: auto;
+      width: auto;
+      justify-content: flex-start;
+    }
+
+    .inv-subtitle {
+      min-width: 140px;
+    }
+  }
+
+  .invoice-actions-btn .invoice-action-btn a.btn-download {
+    margin-bottom: 20px;
+  }
+
+  .invoice .content-section .inv--payment-info span {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,247 @@
+//  =================
+//      Imports
+//  =================
+
+@import '../../base/base'; // Base Variables
+.apps-invoice-list {
+    .widget-content-area,
+    .dataTables_wrapper {
+        padding: 0;
+    }
+
+    div.dataTables_wrapper button:hover {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    .inv-list-top-section {
+        margin: 20px 21px 20px 21px;
+    }
+
+    div.dataTables_wrapper div.dataTables_length {
+        align-self: center;
+
+        label {
+            margin-bottom: 0;
+            margin-right: 15px;
+        }
+    }
+
+    .dataTables_wrapper .dataTables_length select.form-control {
+        margin: 0;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter {
+        align-self: center;
+
+        svg {
+            top: 5px;
+        }
+
+        label {
+            margin: 0;
+            margin-right: 15px;
+        }
+
+        input {
+            margin: 0;
+        }
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    table.dataTable {
+        margin: 0 !important;
+    }
+
+    .table > {
+        thead {
+            border-top: none;
+            border-bottom: none;
+
+            > tr > th {
+                text-transform: initial;
+                font-weight: 600;
+                border-top: none;
+                background: rgba(186, 231, 255, 0.34);
+                border-right: none;
+                border-left: none;
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-left: 0;
+                -webkit-transition: all 0.1s ease;
+                transition: all 0.1s ease;
+                padding: 10px 21px 10px 21px;
+                color: $m-color_9;
+                font-weight: 600;
+                font-size: 14px;
+                letter-spacing: 1px;
+                white-space: nowrap;
+
+                &:first-child {
+                    &:before,
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                &:last-child {
+                    &:before,
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            &:before {
+                display: none;
+            }
+
+            > tr {
+                > td {
+                    &:first-child {
+                        border-top-left-radius: 6px;
+                    }
+
+                    padding: 0;
+                    padding: 10px 21px 10px 21px;
+                    color: $m-color_9;
+                    letter-spacing: normal;
+                    white-space: nowrap;
+
+                    .inv-number {
+                        color: $secondary;
+                        cursor: pointer;
+                        font-size: 16px;
+                        font-weight: 600;
+                        text-align: left;
+                    }
+
+                    .user-name {
+                        color: $m-color_9;
+                        font-size: 14px;
+                        font-weight: 600;
+                        letter-spacing: 0.14px;
+                        margin-bottom: 0;
+                        overflow: hidden;
+                        text-align: left;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        word-wrap: break-word;
+                    }
+
+                    .inv-email {
+                        color: $m-color_9;
+                        font-size: 14px;
+                        font-weight: 600;
+                        letter-spacing: 0.14px;
+                        margin-bottom: 0;
+                        margin-top: 0;
+                        overflow: hidden;
+                        text-align: left;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        word-wrap: break-word;
+
+                        svg {
+                            width: 17px;
+                            height: 17px;
+                            vertical-align: text-bottom;
+                            color: $secondary;
+                            fill: $l-secondary;
+                            stroke-width: 1.5;
+                        }
+                    }
+
+                    .inv-date svg {
+                        width: 17px;
+                        height: 17px;
+                        vertical-align: text-top;
+                        color: $success;
+                        fill: $l-success;
+                        stroke-width: 1.5;
+                    }
+
+                    .inv-status {
+                        font-weight: 500;
+                        letter-spacing: 0.14px;
+                        padding: 0.3rem 0.5rem;
+                        text-align: center;
+                        box-shadow: none;
+                        -webkit-transform: none;
+                        transform: none;
+
+                        &.badge-success {
+                            background-color: $l-success;
+                            color: $success;
+                        }
+
+                        &.badge-danger {
+                            color: $danger;
+                            background-color: $l-danger;
+                        }
+                    }
+
+                    .dropdown {
+                        .dropdown-toggle svg {
+                            stroke-width: 1px;
+                        }
+
+                        &.show .dropdown-toggle svg {
+                            stroke-width: 1px;
+                            color: #7367f0;
+                        }
+
+                        .dropdown-menu {
+                            padding: 9px !important;
+                        }
+                    }
+                }
+
+                > td .dropdown .dropdown-menu a.dropdown-item {
+                    background: $l-info;
+                    padding: 6px 11px;
+
+                    svg {
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 7px;
+                        vertical-align: text-top;
+                    }
+
+                    &.action-edit {
+                        background: $l-info;
+                        color: $info;
+                        margin-bottom: 7px;
+
+                        svg {
+                            color: $info;
+                        }
+                    }
+
+                    &.action-delete {
+                        background: $l-danger;
+                        color: $danger;
+
+                        svg {
+                            color: $danger;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* 
+    Inv List Bottom Section
+*/
+
+    .inv-list-bottom-section {
+        padding: 15px;
+    }
+}
