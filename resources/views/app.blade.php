@@ -23,8 +23,6 @@
 
     <!-- Custom styles for this template -->
     <link href="authenticated/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="modern/assets/css/styles.min.css" />
-
     <!-- responsive style -->
     <link href="authenticated/css/responsive.css" rel="stylesheet" />
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
@@ -55,13 +53,5 @@
 </script>
 <!-- custom js -->
 <script type="text/javascript" src="authenticated/js/custom.js"></script>
-
-<script src="modern/assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="modern/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="modern/assets/js/sidebarmenu.js"></script>
-  <script src="modern/assets/js/app.min.js"></script>
-  <script src="modern/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="modern/assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="modern/assets/js/dashboard.js"></script>
 
 </html>

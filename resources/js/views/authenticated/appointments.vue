@@ -217,7 +217,7 @@ export default {
     position: absolute;
     left: 20px;
     top: 10px;
-    color: #5D87FF;
+    color: #178066;
     font-weight: 400;
     line-height: 24px;
     font-style: italic;
@@ -227,7 +227,7 @@ export default {
 
 .booking-form .submit-btn {
     color: #fff;
-    background-color: #5D87FF;
+    background-color: #178066;
     font-weight: 700;
     height: 80px;
     font-size: 18px;

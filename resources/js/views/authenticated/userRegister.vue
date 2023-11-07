@@ -92,7 +92,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(135deg, #5D87FF, #5D87FF);
+    background: linear-gradient(135deg, #178066, #178066);
 }
 
 .container {
@@ -118,7 +118,7 @@ body {
     height: 3px;
     width: 30px;
     border-radius: 5px;
-    background: linear-gradient(135deg, #5D87FF, #5D87FF);
+    background: linear-gradient(135deg, #178066, #178066);
 }
 
 .content form .user-details {
@@ -153,7 +153,7 @@ form .input-box span.details {
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
-    border-color: #5D87FF;
+    border-color: #178066;
 }
 
 form .gender-details .gender-title {
@@ -187,7 +187,7 @@ form .category label .dot {
 #dot-1:checked~.category label .one,
 #dot-2:checked~.category label .two,
 #dot-3:checked~.category label .three {
-    background: #5D87FF;
+    background: #178066;
     border-color: #d9d9d9;
 }
 
@@ -211,12 +211,12 @@ form .button input {
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, #5D87FF, #5D87FF);
+    background: linear-gradient(135deg, #178066, #178066);
 }
 
 form .button input:hover {
     /* transform: scale(0.99); */
-    background: linear-gradient(-135deg, #5D87FF, #5D87FF);
+    background: linear-gradient(-135deg, #178066, #178066);
 }
 
 @media(max-width: 584px) {
