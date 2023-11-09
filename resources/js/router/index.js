@@ -50,10 +50,30 @@ const routes = [
   },
 
   {
-    path: '/admin',
-    name: 'admin',
+    path: '/dashboard',
+    name: 'dashboard',
     component: () => import('../views/adminDash/index.vue'),
   },
+
+  {
+    path: '/billing',
+    name: 'billing',
+    component: () => import('../views/adminDash/billing.vue'),
+  },
+
+  {
+    path: '/tables',
+    name: 'tables',
+    component: () => import('../views/adminDash/tables.vue'),
+  },
+
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import('../views/adminDash/profile.vue'),
+  },
+
+
 
   {
     path: '/:pathMatch(.*)*', // Catch-all route should be at the bottom

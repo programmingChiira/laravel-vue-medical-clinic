@@ -33,9 +33,7 @@
                 <a href="javascript:;" class="nav-link text-white p-0" id="iconsidestbarsidenavbar"
                   @click="toggleAside">
                   <div class="sidenavbar-toggler-inner">
-                    <i class="sidenavbar-toggler-line bg-white"></i>
-                    <i class="sidenavbar-toggler-line bg-white"></i>
-                    <i class="sidenavbar-toggler-line bg-white"></i>
+                    <i class="fa fa-close"></i>
                   </div>
                 </a>
               </li>
@@ -369,18 +367,7 @@
             </div>
           </div>
         </div>
-        <footer class="footer pt-3  ">
-          <div class="container-fluid">
-            <div class="row align-items-center justify-content-lg-between">
-              <div class="col-lg-6 mb-lg-0 mb-4">
-                <div class="copyright text-center text-sm text-muted text-lg-start">
-                  Made with <i class="fa fa-heart"></i> by
-                  <a href="https://github.com/programmingChiira" class="font-weight-bold" target="_blank">Chiira</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer></Footer>
       </div>
     </main>
   </body>
@@ -388,7 +375,7 @@
 
 <script>
 import axios from 'axios';
-import Footer from '@/views/oneTimeUseComponents/Footer.vue';
+import Footer from '@/views/oneTimeUseComponents/AdminFooter.vue';
 import AdminDesktopNav from '@/views/oneTimeUseComponents/AdminDeskNav.vue';
 import AdminMobileNav from '@/views/oneTimeUseComponents/AdminMobileNav.vue';
 
