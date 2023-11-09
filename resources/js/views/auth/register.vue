@@ -98,8 +98,7 @@
         <div class="row">
           <div class="col-8 mx-auto text-center mt-1">
             <p class="mb-0 text-secondary">
-              Made with <i class="fa fa-heart"></i> by
-              <a href="https://github.com/programmingChiira" class="font-weight-bold" target="_blank">Chiira</a>
+              By <a href="https://github.com/programmingChiira" class="font-weight-bold" target="_blank">Chiira</a>
             </p>
           </div>
         </div>
