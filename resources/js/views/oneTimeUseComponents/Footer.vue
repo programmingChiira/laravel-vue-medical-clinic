@@ -56,9 +56,6 @@
               <router-link class="" to="/doctors">
                 Doctors
               </router-link>
-              <router-link class="" to="/contact">
-                Contact Us
-              </router-link>
             </div>
           </div>
         </div>

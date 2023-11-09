@@ -28,9 +28,9 @@
                         repellat modi impedit sequi.
                       </p>
                       <div class="btn-box">
-                        <a href="" class="btn1">
+                        <router-link to="/" class="btn1">
                           Read More
-                        </a>
+                        </router-link>
                       </div>
                     </div>
                   </div>
@@ -52,9 +52,9 @@
                         repellat modi impedit sequi.
                       </p>
                       <div class="btn-box">
-                        <a href="" class="btn1">
+                        <router-link to="/" class="btn1">
                           Read More
-                        </a>
+                        </router-link>
                       </div>
                     </div>
                   </div>
@@ -76,9 +76,9 @@
                         repellat modi impedit sequi.
                       </p>
                       <div class="btn-box">
-                        <a href="" class="btn1">
+                        <router-link to="/" class="btn1">
                           Read More
-                        </a>
+                        </router-link>
                       </div>
                     </div>
                   </div>
@@ -171,9 +171,9 @@
             </div>
           </div>
           <div class="btn-box">
-            <a href="">
+            <router-link to="/">
               View All
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
@@ -200,9 +200,9 @@
                 are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
                 the middle of text. All
               </p>
-              <a href="">
+              <router-link to="/">
                 Read More
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -311,13 +311,13 @@
           </div>
         </div>
         <div class="btn-box">
-          <a href="">
+          <router-link to="/" class="btn btn-sm" style="background-color: #6FB3B8;color: white;">
             View All
-          </a>
+          </router-link>
         </div>
       </div>
     </section>
-    
+
     <section class="client_section layout_padding-bottom">
       <div class="container">
         <div class="heading_container heading_center ">

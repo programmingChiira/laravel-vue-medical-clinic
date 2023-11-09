@@ -34,11 +34,9 @@
                 <div>
                   <input type="text" class="message-box" placeholder="Message" />
                 </div>
-                <div class="btn_box">
-                  <button>
-                    SEND
-                  </button>
-                </div>
+                <button style="background-color: #388087;color:white;" class="btn btn-sm">
+                  SUBMIT
+                </button>
               </form>
             </div>
           </div>
