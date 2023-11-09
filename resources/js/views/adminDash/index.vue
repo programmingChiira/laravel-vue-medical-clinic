@@ -39,9 +39,9 @@
               </li>
 
               <li v-if="showAside == false" class="nav-item px-3 d-flex align-items-center">
-                <a href="javascript:;" class="nav-link text-white p-0">
-                  <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-                </a>
+                <router-link to="/profile" class="nav-link text-white p-0">
+                  <i class="fa fa-user fixed-plugin-button-nav cursor-pointer"></i>
+                </router-link>
               </li>
             </ul>
           </div>
