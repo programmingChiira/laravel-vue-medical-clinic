@@ -1,40 +1,63 @@
 <template>
-  <!--  Body Wrapper -->
-  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-    data-sidebar-position="fixed" data-header-position="fixed">
-    <div
-      class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
-      <div class="d-flex align-items-center justify-content-center w-100">
-        <div class="row justify-content-center w-100">
-          <div class="col-md-8 col-lg-6 col-xxl-3">
-            <div class="card mb-0">
-              <div class="card-body">
-                <router-link to="/" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                  <img src="modern/assets/images/logos/dark-logo.svg" width="180" alt="">
-                </router-link>
-                <p class="text-center">Your Social Campaigns</p>
-                <form>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <body class="">
+    <main class="main-content  mt-0">
+      <section>
+        <div class="page-header min-vh-100">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
+                <div class="card card-plain">
+                  <div class="card-header pb-0 text-start">
+                    <p> 
+                      <router-link style="border-bottom: 1px solid black;" to="/"> <i class="fa fa-home"></i> Home</router-link>
+                    </p>
+                    <h4 class="font-weight-bolder">Sign In</h4>
+                    <p class="mb-0">Enter your email and password to sign in</p>
                   </div>
-                  <div class="mb-4">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  <div class="card-body">
+                    <form role="form">
+                      <div class="mb-3">
+                        <input type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
+                      </div>
+                      <div class="mb-3">
+                        <input type="email" class="form-control form-control-lg" placeholder="Password"
+                          aria-label="Password">
+                      </div>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                      </div>
+                      <div class="text-center">
+                        <button type="button" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
+                      </div>
+                    </form>
                   </div>
-                  <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
-                  <div class="d-flex align-items-center justify-content-center">
-                    <p class="fs-4 mb-0 fw-bold">New to Modernize?</p>
-                    <router-link class="text-primary fw-bold ms-2" to="./register">Create an account</router-link>
+                  <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                    <p class="mb-4 text-sm mx-auto">
+                      Don't have an account?
+                      <router-link to="/register" class="text-primary text-gradient font-weight-bold">Sign up</router-link>
+                    </p>
                   </div>
-                </form>
+                </div>
+              </div>
+              <div
+                class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
+                <div
+                  class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden"
+                  style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
+            background-size: cover;">
+                  <span class="mask bg-gradient-primary opacity-6"></span>
+                  <h4 class="mt-5 text-white font-weight-bolder position-relative">"Attention is the new currency"</h4>
+                  <p class="text-white position-relative">The more effortless the writing looks, the more effort the
+                    writer actually put into the process.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </section>
+    </main>
+  </body>
 </template>
 
 <script>
@@ -43,25 +66,24 @@ import Footer from '@/views/oneTimeUseComponents/Footer.vue';
 import Nav from '@/views/oneTimeUseComponents/Nav.vue';
 
 export default {
-    components: {
-        Footer,
-        Nav,
-    },
+  components: {
+    Footer,
+    Nav,
+  },
 
-    data() {
-        return {
-            //
-        };
-    },
+  data() {
+    return {
+      //
+    };
+  },
 
-    mounted() {
-        document.title = 'Home :- Intelligent system';
-    },
-    methods: {
-        //
-    },
+  mounted() {
+    document.title = 'Home :- Intelligent system';
+  },
+  methods: {
+    //
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
