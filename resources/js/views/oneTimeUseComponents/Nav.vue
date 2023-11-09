@@ -42,7 +42,8 @@
                   <li><router-link style="color: black;" to="/login">Login</router-link></li>
                   <div class="dropdown-divider"></div>
                   <li><router-link style="color: black;" to="/register">Register</router-link></li>
-                  <br/>
+                  <div class="dropdown-divider"></div>
+                  <li><router-link style="color: black;" to="/dashboard">Dashboard</router-link></li>
                 </ul>
             </li>
           </ul>
@@ -120,5 +121,10 @@ export default {
 .navbar-nav .dropdown-menu a:hover {
   color: #0d6efd;
   background-color: #e9ecef;
+}
+
+.dropdown-divider {
+  border-top: 1px solid #ccc; /* Add a divider line */
+  margin: 5px 0; /* Adjust vertical spacing */
 }
 </style>

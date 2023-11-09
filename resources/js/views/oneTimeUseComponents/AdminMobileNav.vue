@@ -11,7 +11,7 @@
         <div class="collapse sidestbar-collapse  w-auto " id="sidenavbar-collapse-main">
             <ul class="sidestbar-nav">
                 <li class="nav-item">
-                    <router-link class="nav-link active" to="/dashboard">
+                    <router-link class="nav-link" to="/dashboard" :class="{ active: $route.path === '/dashboard' }">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -20,7 +20,7 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link " to="/tables">
+                    <router-link class="nav-link " to="/tables" :class="{ active: $route.path === '/tables' }">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
@@ -29,7 +29,7 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link " to="/billing">
+                    <router-link class="nav-link " to="/billing" :class="{ active: $route.path === '/billing' }">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
