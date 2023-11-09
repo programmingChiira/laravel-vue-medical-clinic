@@ -1,13 +1,13 @@
 <body>
     <h1>Inspired by:</h1>
     <div>
-        <a href="https://www.creative-tim.com/">
+        <a target="_blank" href="https://demos.creative-tim.com/argon-dashboard/pages/dashboard?_ga=2.123121803.1454257315.1699534103-131532493.1699004902">
             <img src="/public/readme/creativeTim.png"/>
         </a>
         <p>Creative Tim</p>
     </div>
     <div>
-        <a href="https://themewagon.github.io/orthoc/">
+        <a target="_blank" href="https://themewagon.github.io/orthoc/">
             <img src="/public/readme/orthoc.png"/>
         </a>
         <p>ThemeWagon ( Orthoc )</p>
