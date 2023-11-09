@@ -1,13 +1,17 @@
 <body>
     <h1>Inspired by:</h1>
-    <a href="https://www.creative-tim.com/">
-        <p>1</p>
-        <img src="/public/readme/creativeTim.png"/>
-    </a>
-    <a href="https://themewagon.github.io/orthoc/">
-        <p>2</p>
-        <img src="/public/readme/orthoc.png"/>
-    </a>
+    <div>
+        <a href="https://www.creative-tim.com/">
+            <img src="/public/readme/creativeTim.png"/>
+        </a>
+        <p>Creative Tim</p>
+    </div>
+    <div>
+        <a href="https://themewagon.github.io/orthoc/">
+            <img src="/public/readme/orthoc.png"/>
+        </a>
+        <p>ThemeWagon Orthoc</p>
+    </div>
     <h1>Project Overview</h1>
     <p>The Clinic Management System is a comprehensive software application designed to streamline and automate various administrative and clinical tasks in a healthcare clinic or medical facility. This system will help healthcare professionals manage patient records, appointments, billing, and other essential operations efficiently. Below, we provide a detailed project description to guide software developers in building this system using the Laravel PHP framework.</p>
     <h2>Project Objectives</h2>
