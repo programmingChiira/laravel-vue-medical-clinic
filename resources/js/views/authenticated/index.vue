@@ -3,7 +3,10 @@
     <div class="hero_area">
 
       <div class="hero_bg_box">
-        <img src="/authenticated/images/hero-bg.png" alt="">
+          <img src="assets/images/doctor/img1.jpg" alt="" style="object-fit: cover;">
+          <div
+            style="position: absolute; top: 0; left: 0; width: 200%; height: 100%; background-color: rgba(0, 0, 0, 0.5);">
+          </div>
       </div>
 
       <!-- header section strats -->
